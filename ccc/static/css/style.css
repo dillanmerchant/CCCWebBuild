@@ -1,0 +1,48 @@
+.top-container{
+    padding-top: 500px;
+}
+
+.home-rady {
+    position: absolute;
+    width: 100%;
+    height:650px; 
+    left: 0px;
+    /* top: 500px; */
+    filter: brightness(40%);
+    /* margin: -10px 0px 0px -180px; */
+    /* clip-path: inset-rectangle(20px, 0px, 570px, 0px); */
+    object-fit: cover;
+    /* object-position: 20% 10%; */
+    /* background: url(https://ucsdnews.ucsd.edu/news_uploads/Rady-school-of-management-lead.jpg); */
+    /* background-size: 100% 100%; */
+}
+
+.header-rady {
+    position: absolute;
+    width: 100%;
+    height:650px; 
+    left: 0px;
+    top: 100px;
+    filter: brightness(40%);
+    /* margin: -10px 0px 0px -180px; */
+    /* clip-path: inset-rectangle(20px, 0px, 570px, 0px); */
+    object-fit: cover;
+    /* object-position: 20% 10%; */
+    /* background: url(https://ucsdnews.ucsd.edu/news_uploads/Rady-school-of-management-lead.jpg); */
+    /* background-size: 100% 100%; */
+}
+
+.text-overlay{
+    font-family: Lato; 
+    font-style: normal; 
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 58px;
+    letter-spacing: 0.135em; 
+    background: transparent;
+}
+
+
+.nav{
+    
+}
