@@ -7,16 +7,80 @@
         <meta charset = "UTF-8" />
         <title>Home</title>
         <link rel = "stylesheet" href = "{% static 'css/style.css' %}">
+        <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+        <style>
+            .home-rady {
+                position: absolute;
+                width: 100%;
+                height:605px; 
+                left: 0px;
+                filter: brightness(30%);
+                object-fit: cover;
+            } 
+            .head-text{
+                position: absolute;
+                top: 220px;
+                left: 90px;
+                font-family: 'Lato', sans-serif;
+                font-size: 3.8em;
+                font-weight: normal;
+                letter-spacing: 0.13em;
+                z-index: 20;
+                color: white;
+            }
+            .desc-text{
+                position: absolute;
+                top: 485px;
+                left: 90px;
+                padding-right: 130px;
+                font-family: 'Lato', sans-serif;
+                font-size: 2.0em;
+                /* font-weight: bold; */
+                line-height: 1.5;
+                letter-spacing: 0.130em;
+                z-index: 20;
+                color: white;
+            }
+        </style>
     </head>
     <body style="background-color:#1D1D1D;">
-        <div class="nav">
-        </div>
+        <header>
+            <img class = "logo-header" src="../static/images/logo.png"/>
+            <h3 style="
+            width: 393px;
+            font-family: Lato;
+            color: white;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 22px;
+            line-height: 22px;
+            text-align: center;
+            letter-spacing: 0.155em;">Cornerstone Community Consultants</h3>
+            <nav>   
+                <ul class="nav_links">
+                    <li><a href="about.html">About Us</a></li>
+                    <div class = "dropdown">
+                        <button class="dropbtn">Work With Us</button>
+                        <div class="dropdown-content">
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="portfolio.html">Portfolio</a></li>
+                        </div>
+                    </div>
+                    <!-- <li><a href="services.html">Work With Us</a></li> -->
+                    <li><a href="join.html">Join Us</a></li>
+                    <li><a href="team.html">Contact Us</a></li>
+                  </ul>
+            </nav>
+        </header>
         <div class="w3-container">
-            <img class = "home-rady" src="../static/images/Rady-school-of-management-lead-1024x653.jpg" />
-            <h1 class = "text-overlay" style = "color: white;"> Welcome to </h1>
-            <h2 style="color:#FFE27B;font-family: Lato; font-style: normal; font-weight:800;font-size: 48px;line-height: 58px;letter-spacing: 0.135em; filter: brightness(100%);"
-            >Cornerstone Community Consultants </h2>
+            <img class = "home-rady" src="../static/images/Capture.JPG" />
+            <h2 class="head-text">Welcome to <span style="color: #FFE27B; font-weight: bold;">Cornerstone Community Consultants.</span></h2>
+            <p class="desc-text">We are a student-run business consulting organization based at the University of California, San Diego. We provide pro-bono consulting services to local businesses and give students the opportunity to develop their business analysis and leadership skills. </p>
         </div>
+
+        <div>
+            <h2 style="color: white;">OUR MISSION</h2>
+        </div> 
     </body>
 
 
