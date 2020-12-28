@@ -2,7 +2,7 @@
     padding-top: 500px;
 }
 
-.home-rady {
+.first-img {
     position: absolute;
     width: 100%;
     height:605px; 
@@ -26,12 +26,48 @@
     /* background-size: 100% 100%; */
 }
 
-.home-text{
+.header-title-text{
+  position: absolute;
+width: 100%;
+height: 88px;
+left: 115px;
+top: 364px;
+  font-family: Lato;
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+letter-spacing: 0.135em;
+}
+
+/* Pattern styles */
+.container {
+  display: table;
+  width: 100%;
+}
+
+.left-half {
+  background-color: #1D1D1D;
+  position: absolute;
+  left: 0px;
+  width: 50%;
+height: 194px;
+left: 759px;
+top: 685px;
+}
+
+.right-half {
+  background-color: #1D1D1D;
+  position: absolute;
+  right: 0px;
+  width: 50%;
+}
+/* Class for all main text in website */
+.page-text{
     position: absolute;
-    top: 30px;
-    left: 30px;
-    font-family: Lato;
-    z-index: 10;
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 0.13em;
+    z-index: 20;
     color: white;
 }
 
@@ -69,7 +105,7 @@ header {
       position: absolute;
       width: 115px;
       height: 110px;
-      left: 32px;
+      left: 34px;
       top: 30px;
 
   }

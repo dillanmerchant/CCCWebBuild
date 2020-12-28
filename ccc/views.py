@@ -14,5 +14,8 @@ def team(request):
 def portfolio(request):
     return render(request, 'portfolio.html', {})
 
-def join(request):
-    return render(request, 'join.html', {})
+def recruitment(request):
+    return render(request, 'recruitment.html', {})
+
+def services(request):
+    return render(request, 'services.html', {})
