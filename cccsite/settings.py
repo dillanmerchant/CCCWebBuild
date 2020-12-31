@@ -123,3 +123,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIR = [
     "/Desktop/cccwebsite/ccc/static/"
 ]
+
+EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
+SENDGRID_API_KEY = ''
+SENDGRID_SANDBOX_MODE_IN_DEBUG = False
+FROM_EMAIL = 'ucsdcornerstone@gmail.com'

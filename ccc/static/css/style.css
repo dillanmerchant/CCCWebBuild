@@ -33,7 +33,7 @@
 }
 
 .header-title-text{
-  position: relative;
+  position: absolute;
   /* width: 100%; */
   height: 88px;
   left: 115px;

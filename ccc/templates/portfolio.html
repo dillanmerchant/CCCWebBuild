@@ -34,6 +34,36 @@
                 top: 23px;
             }
 
+            .button {
+                /* border-radius: 4px;
+                transition: all 0.5s; */
+
+                position: absolute;
+                background-color: #1D1D1D; 
+                border: 2px solid #FFE27B;
+                color: #FFE27B;
+                text-align: center;
+                text-decoration: none;
+                padding: 10px 24px;
+                display: inline-block;
+                font-family: 'Lato', sans-serif;
+                font-size: 18px;
+                margin: 4px 2px;
+                cursor: pointer;
+                transition-duration: 0.4s;
+            }
+            
+            
+            .button:hover{
+                background-color: #FFE27B;
+                color: black;
+            }
+
+            .button:active {
+                background-color: #FFE27B;
+                transform: translateY(4px);
+            }
+
 
             .navbar {
                 overflow: hidden;
@@ -172,10 +202,10 @@
         </header>
         <div class="w3-container" style="position: relative; top: 150px;">
             <h2 class = "page-text" style="top: 20px; left: 160px; font-size: 2.4em; font-weight: normal;">PROJECT TIMELINE</h2>
-            <img src="../static/images/projecttimeline.JPG" style="position: absolute; left: 250px; top: 150px; width: 1005px; height: 650px; object-fit: cover;"/>
+            <img src="../static/images/projecttimeline2.JPG" style="position: absolute; left: 250px; top: 150px; width: 1005px; height: 650px; object-fit: cover;"/>
         </div> 
 
-        <div class="w3-container" style="position: relative; top: 1050px;">
+        <div class="w3-container" style="position: relative; top: 1050px; left: 24px; width: 600px;">
             <h2 class = "page-text" style="top: 20px; left: 160px; font-size: 2.4em; font-weight: normal;">PAST PROJECTS</h2>
             <h4 class="page-text" style= "top: 100px; left: 180px; font-size: 18px; width: 1150px; line-height: 30px;">Cornerstone Community Consultants has worked with many businesses across various industries. Below are some of our past client names and project descriptions.</h4>
             
@@ -233,6 +263,11 @@
                 </div>
             </div>
         </div> 
+        <div class="w3-container" style="position: relative; top: 2270px; display: flex; justify-content: center; align-items: center; align-content: center;">
+            <p class="page-text" style="font-size: 18px; text-align: center;">Interested in working with us?</p>
+            <a href="contact.html" class="button" style="text-align: center; top: 35px; width: 100px;">Contact Us</a>
+            <p class="page-text" style="font-size: 18px; text-align: center; top: 110px;">We will be in touch!</p>
+        </div>
 
     </body>
 
