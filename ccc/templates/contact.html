@@ -11,6 +11,25 @@
         <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
 
         <style>
+            .header-rady-img {
+                position: relative;
+                width: 100%;
+                height:250px; 
+                filter: brightness(40%);
+                object-fit: cover;
+                /* object-position: 20% 10%; */
+                /* background: url(https://ucsdnews.ucsd.edu/news_uploads/Rady-school-of-management-lead.jpg); */
+                /* background-size: 100% 100%; */
+            }
+
+            .rectangle{
+                /* width: 889px; */
+                height: 4px;
+                left: 490px;
+                background:rgb(255, 255, 255);
+                position:absolute;
+                width:61.7%; 
+            }
 
             .logo-header {
                 cursor: pointer;
@@ -372,6 +391,14 @@
             bottom: 38.89%;
            }
         </style>
+
+        <!-- Header Image -->
+        <div class="w3-container" style="position: relative; top: 150px;">
+            <img class = "header-rady-img" src="../static/images/radddddddddd.jpg"/>
+            <h1 class = "page-text" style = "top: 100px; left: 115px; font-weight: 900; font-size: 48px;">CONTACT US</h1>
+            <div class="rectangle" style = "bottom: 133px;"></div>
+            <div class="rectangle" style = "bottom: 116px; background: #FFE27C;"></div>
+        </div>
         <div class="container">
             <form action = "" method = "POST">
                 {% csrf_token %} 
