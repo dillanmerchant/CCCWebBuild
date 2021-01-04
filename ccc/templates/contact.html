@@ -40,6 +40,15 @@
                 top: 23px;
             }
 
+            .logo-footer {
+                cursor: pointer;
+                position: absolute;
+                width: 110px;
+                height: 105px;
+                left: 33px;
+                top: 13px;
+            }
+
             .navbar {
                 overflow: hidden;
                 background-color: #1D1D1D;
@@ -334,12 +343,14 @@
                 top: 1836px;
             }
 
+                
             footer{
-                position: absolute;
-                width: 100%;
-                height: 110px;
-                left: 0px;
+                position:absolute;
+                bottom: 0;
                 top: 2150px;
+                width:100%;
+                height:100px; 
+                /* bottom: 0; */
             }
 
             h8{
@@ -347,7 +358,7 @@
                 width: 393px;
                 height: 29px;
                 left: 170px;
-                top: 60px;
+                top: 45px;
 
                 font-family: Lato;
                 font-style: normal;
@@ -363,7 +374,7 @@
                 position: absolute;
                 left: 69.93%;
                 right: 26.94%;
-                top: 38.38%;
+                top: 29.38%;
                 bottom: 38.89%; 
             }
 
@@ -371,7 +382,7 @@
                 position: absolute;
                 left: 82.64%;
                 right: 14.24%;
-                top: 38.38%;
+                top: 29.38%;
                 bottom: 38.89%;
             }
 
@@ -379,7 +390,7 @@
                 position: absolute;
                 left: 76.32%;
                 right: 20.56%;
-                top: 38.38%;
+                top: 29.38%;
                 bottom: 38.89%;
             }
 
@@ -387,7 +398,7 @@
             position: absolute;
             left: 89.1%;
             right: 7.78%;
-            top: 38.38%;
+            top: 29.38%;
             bottom: 38.89%;
            }
         </style>
@@ -436,6 +447,7 @@
         </div>
         {% endblock content %}
         <footer style="background-color:white;">
+            <img class = "logo-header" src="../static/images/blacklogo.png"/>
             <h8>Cornerstone Community Consultants</h8>
             <a href="https://www.linkedin.com/company/cornerstone-community-consultants/about/">
                 <img class = "linkedin-footer" src="../static/images/linkedinfooter.svg"> 
@@ -449,7 +461,7 @@
             <a href="mailto:ucsd.cornerstone@gmail.com">
                 <img class = "mail-footer2" src="../static/images/mail-footer2.svg"> 
             </a>
-          </footer>
+        </footer>
     </body>
 
  </html>
