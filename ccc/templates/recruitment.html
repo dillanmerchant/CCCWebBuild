@@ -1,238 +1,397 @@
-{% load static %} 
+{% load static %}
 
 
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <meta charset = "UTF-8" />
-        <title>Recruitment</title>
-        <link rel = "stylesheet" href = "../static/css/style.css">
-        <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
 
-        <style>
+<head>
+    <meta charset="UTF-8" />
+    <title>Recruitment</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
 
-            .header-rady-img {
-                position: relative;
-                width: 100%;
-                height:250px; 
-                filter: brightness(40%);
-                object-fit: cover;
-                /* object-position: 20% 10%; */
-                /* background: url(https://ucsdnews.ucsd.edu/news_uploads/Rady-school-of-management-lead.jpg); */
-                /* background-size: 100% 100%; */
-            }
+    <style>
+        .header-rady-img {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            filter: brightness(40%);
+            object-fit: cover;
+            /* object-position: 20% 10%; */
+            /* background: url(https://ucsdnews.ucsd.edu/news_uploads/Rady-school-of-management-lead.jpg); */
+            /* background-size: 100% 100%; */
+        }
 
-            .rectangle{
-                /* width: 889px; */
-                height: 4px;
-                left: 540px;
-                background:rgb(255, 255, 255);
-                position:absolute;
-                width: 58.4%; 
-            }
+        .rectangle {
+            /* width: 889px; */
+            height: 4px;
+            left: 540px;
+            background: rgb(255, 255, 255);
+            position: absolute;
+            width: 58.4%;
+        }
 
-            .logo-header {
-                cursor: pointer;
-                position: absolute;
-                width: 110px;
-                height: 105px;
-                left: 38px;
-                top: 23px;
-            }
+        .logo-header {
+            cursor: pointer;
+            position: absolute;
+            width: 6.5%;
+            height: 65%;
+            left: 3%;
+            top: 17%;
+        }
 
-            .button {
-                /* border-radius: 4px;
+        /* Accordian Dropdown Style */
+        .accordion {
+            background-color: #1D1D1D;
+            color: #0D0D0D;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+        }
+
+        .active,
+        .accordion:hover {
+            background-color: #2D2D2D;
+        }
+
+        .accordion:after {
+            content: '\002B';
+            color: #FFF;
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+        }
+
+        .active:after {
+            content: "\2212";
+        }
+
+        .panel {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            margin-left: 50px;
+            margin-right: 50px;
+            transition: max-height 0.2s ease-out;
+        }
+
+        /* End Accordian Dropdown */
+
+        .button {
+            /* border-radius: 4px;
                 transition: all 0.5s; */
 
-                position: absolute;
-                background-color: #1D1D1D; 
-                border: 2px solid #FFE27B;
-                color: #FFE27B;
-                text-align: center;
-                text-decoration: none;
-                padding: 10px 24px;
-                display: inline-block;
-                font-family: 'Lato', sans-serif;
-                font-size: 18px;
-                margin: 4px 2px;
-                cursor: pointer;
-                transition-duration: 0.4s;
-            }
-            
-            
-            .button:hover{
-                background-color: #FFE27B;
-                color: black;
-            }
-
-            .button:active {
-                background-color: #FFE27B;
-                transform: translateY(4px);
-            }
+            position: absolute;
+            background-color: #1D1D1D;
+            border: 2px solid #FFE27B;
+            color: #FFE27B;
+            text-align: center;
+            text-decoration: none;
+            padding: 10px 24px;
+            display: inline-block;
+            font-family: 'Lato', sans-serif;
+            font-size: 18px;
+            margin: 4px 2px;
+            cursor: pointer;
+            transition-duration: 0.4s;
+        }
 
 
-            .navbar {
-                overflow: hidden;
-                background-color: #1D1D1D;
-                font-family: 'Lato', sans-serif;
-                width: 500px;
-            }
+        .button:hover {
+            background-color: #FFE27B;
+            color: black;
+        }
 
-            .navbar a {
-                float: left;
-                font-size: 19px;
-                color: white;
-                text-align: center;
-                padding: 14px 16px;
-                text-decoration: none;
-            }
-
-            .dropdown1, .dropdown2{
-                float: left;
-                overflow: hidden;
-            }
-
-            .dropdown1 .dropbtn1, .dropdown2 .dropbtn2{
-                font-size: 19px;
-                border: none;
-                outline: none;
-                color: white;
-                padding: 14px 16px;
-                background-color: inherit;
-                font-family: inherit; /* Important for vertical align on mobile phones */
-                margin: 0;
-            }
-            
-            
-            .navbar a:hover, .dropbtn1:hover, .dropbtn2:hover{
-                color: #585858;
-                -webkit-transition: all 1s ease-out;
-                -moz-transition: all 1s ease-out;
-                -o-transition: all 1s ease-out;
-                -ms-transition: all 1s ease-out;
-                transition: all 1s ease-out;
-            }
-            
-            .dropdown-content1, .dropdown-content2 {
-                display: none;
-                position: absolute;
-                /* background-color: #f9f9f9; */
-                background-color: #1D1D1D;
-                min-width: 160px;
-                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-                z-index: 20;
-            }
-                 
-
-            .dropdown-content1 a,  .dropdown-content2 a{
-                float: none;
-                color: white;
-                border: 1px solid white;
-                padding: 12px 16px;
-                text-decoration: none;
-                display: block;
-                text-align: left;
-            }
-
-            
-            .dropdown-content1 a:hover, .dropdown-content2 a:hover {
-                background-color: #ddd;
-            }
+        .button:active {
+            background-color: #FFE27B;
+            transform: translateY(4px);
+        }
 
 
-            .dropdown1:hover .dropdown-content1, .dropdown2:hover .dropdown-content2  {
-                display: block;
-            }
+        .navbar {
+            overflow: hidden;
+            background-color: #1D1D1D;
+            font-family: 'Lato', sans-serif;
+            width: 500px;
+        }
+
+        .navbar a {
+            float: left;
+            font-size: 19px;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .dropdown1,
+        .dropdown2 {
+            float: left;
+            overflow: hidden;
+        }
+
+        .dropdown1 .dropbtn1,
+        .dropdown2 .dropbtn2 {
+            font-size: 19px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            /* Important for vertical align on mobile phones */
+            margin: 0;
+        }
 
 
-            a{
-                text-decoration: none;
-            }
+        .navbar a:hover,
+        .dropbtn1:hover,
+        .dropbtn2:hover {
+            color: #585858;
+            -webkit-transition: all 1s ease-out;
+            -moz-transition: all 1s ease-out;
+            -o-transition: all 1s ease-out;
+            -ms-transition: all 1s ease-out;
+            transition: all 1s ease-out;
+        }
 
-            .CCCtitle{
-                width: 550px;
-                /* font-family: 'Lato', sans-serif; */
-                font-family: Lato;
-                color: white;
-                top: 90px;
-                font-style: normal;
-                font-weight: normal;
-                font-size: 24px;
-                line-height: 22px;
-                text-align: center;
-                letter-spacing: 0.155em;
-                text-decoration: none;
-                padding-right: 290px;
-            }
+        .dropdown-content1,
+        .dropdown-content2 {
+            display: none;
+            position: absolute;
+            /* background-color: #f9f9f9; */
+            background-color: #1D1D1D;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 20;
+        }
 
-            .CCCtitle:hover{
-                color: #585858;
-                -webkit-transition: all 1s ease-out;
-                -moz-transition: all 1s ease-out;
-                -o-transition: all 1s ease-out;
-                -ms-transition: all 1s ease-out;
-                transition: all 1s ease-out;
 
-            }
-        </style>
-        
-    </head>
-    <body style="background-color:#1D1D1D;">
-        <header style="position: fixed; z-index: 50; background-color: #1D1D1D;">
-            <img class = "logo-header" src="../static/images/logo.png"/>
-            <a href="http://127.0.0.1:8000/ccc/">
+        .dropdown-content1 a,
+        .dropdown-content2 a {
+            float: none;
+            color: white;
+            border: 1px solid white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+
+        .dropdown-content1 a:hover,
+        .dropdown-content2 a:hover {
+            background-color: #ddd;
+        }
+
+
+        .dropdown1:hover .dropdown-content1,
+        .dropdown2:hover .dropdown-content2 {
+            display: block;
+        }
+
+
+        a {
+            text-decoration: none;
+        }
+
+        .CCCtitle {
+            width: 550px;
+            /* font-family: 'Lato', sans-serif; */
+            font-family: Lato;
+            color: white;
+            top: 90px;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 24px;
+            line-height: 22px;
+            text-align: center;
+            letter-spacing: 0.155em;
+            text-decoration: none;
+            padding-right: 290px;
+        }
+
+        .CCCtitle:hover {
+            color: #585858;
+            -webkit-transition: all 1s ease-out;
+            -moz-transition: all 1s ease-out;
+            -o-transition: all 1s ease-out;
+            -ms-transition: all 1s ease-out;
+            transition: all 1s ease-out;
+
+        }
+    </style>
+
+</head>
+
+<body style="background-color:#1D1D1D;">
+    <header style="position: fixed; z-index: 50; background-color: #1D1D1D;">
+        <img class="logo-header" src="../static/images/logo.png" />
+        <a href="http://127.0.0.1:8000/ccc/">
             <h3 class="CCCtitle">Cornerstone Community Consultants</h3>
-            </a>
-            <div class="navbar">
-                <a href="about.html">About Us</a>
-                <div class="dropdown1">
+        </a>
+        <div class="navbar">
+            <a href="about.html">About Us</a>
+            <div class="dropdown1">
                 <button class="dropbtn1">Work With Us
                     <i class="fa fa-caret-down"></i>
                 </button>
                 <div class="dropdown-content1">
                     <a href="services.html">Our Services</a>
-                    <a href="portfolio.html">Portfolio</a> 
-                    </div>
-                </div>   
-                <div class="dropdown2">
+                    <a href="portfolio.html">Portfolio</a>
+                </div>
+            </div>
+            <div class="dropdown2">
                 <button class="dropbtn2">Join Us
                     <i class="fa fa-caret-down"></i>
                 </button>
                 <div class="dropdown-content2">
                     <a href="team.html">Our Team</a>
-                    <a href="recruitment.html">Recruitment</a> 
-                    </div>
+                    <a href="recruitment.html">Recruitment</a>
                 </div>
-                <a href="contact.html">Contact Us</a>
-            </div>  
-        </header>
-
-        <!-- Header Image -->
-        <div class="w3-container" style="position: relative; top: 150px;">
-            <img class = "header-rady-img" src="../static/images/radddddddddd.jpg"/>
-            <h1 class = "page-text" style = "top: 100px; left: 115px; font-weight: 900; font-size: 48px;">RECRUITMENT</h1>
-            <div class="rectangle" style = "bottom: 133px;"></div>
-            <div class="rectangle" style = "bottom: 116px; background: #FFE27C;"></div>
+            </div>
+            <a href="contact.html">Contact Us</a>
         </div>
+    </header>
 
-        <div class="w3-container" style="position: relative; top: 190px;">
-            <h2 class = "page-text" style="top: 20px; left: 160px; font-size: 2.4em; font-weight: normal;">RECRUITMENT TIMELINE</h2>
-            <a href="about.html" class="button" style="top: 17px; left: 747px;">Event Page</a>
-            <img src="../static/images/recruitmenttimeline.JPG" style="position: absolute; left: 240px; top: 150px; object-fit: cover;"/>
-        </div> 
+    <!-- Header Image -->
+    <div class="w3-container" style="position: relative; top: 150px;">
+        <img class="header-rady-img" src="../static/images/radddddddddd.jpg" />
+        <h1 class="page-text" style="top: 100px; left: 115px; font-weight: 900; font-size: 48px;">RECRUITMENT</h1>
+        <div class="rectangle" style="bottom: 133px;"></div>
+        <div class="rectangle" style="bottom: 116px; background: #FFE27C;"></div>
+    </div>
 
-        <div class="w3-container" style="position: relative; top: 620px; display: flex; justify-content: center; align-items: center; align-content: center;">
-            <p class="page-text" style="font-size: 18px; text-align: center; line-height: 1.7;">Interested joining?<br>Our application is currently open for Winter 2021.</p>
-            <a href="contact.html" class="button" style="text-align: center; top: 50px; width: 100px;">Apply Now</a>
-            <p class="page-text" style="font-size: 18px; text-align: center; top: 120px;">Applications are due <span style="color: #FFE27B; font-weight: bold; font-size: 20px;">January 15th at 3 pm PST</span></p>
+    <div class="w3-container" style="position: relative; top: 190px;">
+        <h2 class="page-text" style="top: 20px; left: 160px; font-size: 2.4em; font-weight: normal;">RECRUITMENT
+            TIMELINE</h2>
+        <a href="https://fb.me/e/65nJcPi8h" class="button" style="top: 17px; left: 747px;">Event Page</a>
+        <img src="../static/images/recruitmenttimeline.JPG"
+            style="position: absolute; left: 240px; top: 150px; object-fit: cover;" />
+    </div>
+
+    <div class="w3-container"
+        style="position: relative; top: 620px; display: flex; justify-content: center; align-items: center; align-content: center;">
+        <p class="page-text" style="font-size: 18px; text-align: center; line-height: 1.7;">Interested joining?<br>Our
+            application is currently open for Winter 2021.</p>
+        <a href="https://forms.gle/REBuPk4hchuetdqR6" class="button"
+            style="text-align: center; top: 50px; width: 100px;">Apply Now</a>
+        <p class="page-text" style="font-size: 18px; text-align: center; top: 120px;">Applications are due <span
+                style="color: #FFE27B; font-weight: bold; font-size: 20px;">January 15th at 3 pm PST</span></p>
+    </div>
+
+    <!-- Frequently Asked Questions -->
+    <div class="w3-container" style="position: relative; top: 700px;">
+        <h2 class="page-text" style="top: 13px; left: 160px; font-size: 2.4em; font-weight: normal;">FREQUENTLY ASKED
+            QUESTIONS</h2>
+        <!-- Dropdown Questions -->
+        <div class="w3-container" style="position: relative; margin: 200px; top:80px;">
+            <button class="accordion" style="position: relative;">
+                <p class="page-text" style="font-size: larger;"> What is Consulting?</p>
+            </button>
+            <div class="panel">
+                <p
+                    style="font-family: 'Lato', sans-serif; letter-spacing: 0.13em; z-index: 20;color: white; line-height: 30px;">
+                    <br />
+                    Consulting is a service that provides expert advice in a particular area to a party. Consultants
+                    will normally conduct research, run analyses, and formulate data-driven solutions addressing the
+                    issue. An example would be hiring a consultant to gain advice on whether it would be profitable
+                    to move a business to a new location.
+                    <br />
+                    <br />
+                </p>
+            </div>
+
+            <button class="accordion" style="position: relative;">
+                <p class="page-text" style="font-size: larger;"> Why choose Cornerstone Community Consultants?</p>
+            </button>
+            <div class="panel">
+                <p
+                    style="font-family: 'Lato', sans-serif; letter-spacing: 0.13em; z-index: 20;color: white; line-height: 30px;">
+                    <br />
+                    CCC fosters a supportive environment where members have the opportunity to take on leadership
+                    positions, sharpen their hard and soft skills, and be able to grow professionally. Students
+                    can expect a professional and selfless community of like-minded people, career focused events,
+                    and practical experiences.
+                    <br />
+                    <br />
+                </p>
+            </div>
+
+            <button class="accordion" style="position: relative;">
+                <p class="page-text" style="font-size: larger;"> Are there any requirements for joining?</p>
+            </button>
+            <div class="panel">
+                <p
+                    style="font-family: 'Lato', sans-serif; letter-spacing: 0.13em; z-index: 20;color: white; line-height: 30px;">
+                    <br />
+                    There are no academic requirements to join CCC. All that we ask is that you have an interest in consulting, 
+                    come with an open-mind, and be willing to work with others to grow!
+                    <br />
+                    <br />
+                </p>
+            </div>
+
+            <button class="accordion" style="position: relative;">
+                <p class="page-text" style="font-size: larger;"> What if I have no experience in consulting?</p>
+            </button>
+            <div class="panel">
+                <p
+                    style="font-family: 'Lato', sans-serif; letter-spacing: 0.13em; z-index: 20;color: white; line-height: 30px;">
+                    <br />
+                    That’s completely okay! CCC does not require you to have any previous experience in consulting in
+                    order
+                    to join. Once you have been admitted into CCC, you will be led through a training process and be
+                    expected to complete a mock project before taking on a real client project.
+                    <br />
+                    <br />
+                </p>
+            </div>
+
+            <button class="accordion" style="position: relative;">
+                <p class="page-text" style="font-size: larger;"> What if I don’t want to pursue a career in consulting?
+                </p>
+            </button>
+            <div class="panel">
+                <p
+                    style="font-family: 'Lato', sans-serif; letter-spacing: 0.13em; z-index: 20;color: white; line-height: 30px;">
+                    <br />
+                    All the members in CCC come from various studies and don’t neccessarily have the end goal of
+                    pursuing
+                    consulting. However, the skills and training that you gain from our program will be fundamental to
+                    any
+                    industry you choose.
+                    <br />
+                    <br />
+                </p>
+            </div>
+
+            <script>
+                var acc = document.getElementsByClassName("accordion");
+                var i;
+
+                for (i = 0; i < acc.length; i++) {
+                    acc[i].addEventListener("click", function () {
+                        this.classList.toggle("active");
+                        var panel = this.nextElementSibling;
+                        if (panel.style.maxHeight) {
+                            panel.style.maxHeight = null;
+                        } else {
+                            panel.style.maxHeight = panel.scrollHeight + "px";
+                        }
+                    });
+                }
+            </script>
         </div>
+    </div>
 
-        <div class="w3-container" style="position: relative; top: 900px;">
-            <h2 class = "page-text" style="top: 13px; left: 160px; font-size: 2.4em; font-weight: normal;">FREQUENTLY ASKED QUESTIONS</h2>
-        </div>
-
-    </body>
+</body>
 
 
 </html>
