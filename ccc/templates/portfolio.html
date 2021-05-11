@@ -26,6 +26,7 @@
             height: 110px;
             width: 100%;
             position: fixed;
+            z-index: 20;
         }
 
         header * {
@@ -149,8 +150,20 @@
             }
         }
 
+        /* @media screen and (max-width: 1100px) and (min-width: 900px) {
+            #cardForPastProjects {
+                overflow: scroll;
+                /* border: red solid; */
+                /* height: 70vh; 
+                width: 70vw;  */
+                /* align-items: center; */
+                /* margin-bottom: 60px;  */
+            /*}
+        } */
 
-        /*Title Header*/
+         
+
+        /* Title Header */
 
         .title-container {
             width: 100%;
@@ -203,11 +216,170 @@
             margin: 10vh 0px 3vh 10vw;
             letter-spacing: 0.13em;
         }
+
+        .button {
+            /* border-radius: 4px;
+            transition: all 0.5s; */
+
+            position: absolute;
+            background-color: #1D1D1D; 
+            border: 2px solid #FFE27B;
+            color: #FFE27B;
+            text-align: center;
+            text-decoration: none;
+            padding: 10px 24px;
+            display: inline-block;
+            font-family: 'Lato', sans-serif;
+            font-size: 18px;
+            margin: 4px 2px;
+            cursor: pointer;
+            transition-duration: 0.4s;
+        }
+        
+        
+        .button:hover{
+            background-color: #FFE27B;
+            color: black;
+        }
+
+        .button:active {
+            background-color: #FFE27B;
+            transform: translateY(4px);
+        }
+
+        #cardForPastProjects {
+            border-radius: 20px;
+            display: none; 
+            z-index: 10; 
+            /* width: 50vw;  */
+
+            /*centers the pop-up*/
+            position: fixed; 
+            top: 50%; 
+            left: 50%; 
+            transform: translateX(-50%) translateY(-50%);
+
+            background: #FFFDF4;
+            padding-left: 60px; 
+            padding-bottom: 60px; 
+            padding-right: 60px; 
+            padding-top: 60px; 
+
+            opacity: 0.2;
+            overflow: scroll;
+            max-height: 75vh; 
+            scroll-margin-bottom: 60px;
+            /* border: red solid;  */
+
+            flex-wrap: wrap; 
+        }
+
+        #cardContent {
+            /* padding-left: 30%;  */
+            /* margin-left: 50px;  */
+            /*c*/
+            /* width: 70%;  */
+            /* margin-top: 45px; */
+        } 
+
+        #projectDescriptionTitle {
+            /* padding-right: 60px;  */
+            font-family: Lato;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 25px;
+            line-height: 35px;
+            letter-spacing: 0.135em;
+            color: #1D1D1D;
+        }
+
+        #descriptionOfBusiness {
+            /* padding-right: 60px;  */
+            /* margin-top: 15px;  */
+            font-family: Lato;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 22px;
+            letter-spacing: 0.135em;
+            color: #1D1D1D;
+        }
+
+        #cardImage {
+            /* float: left;  */
+            /* width: 25%;  */
+            /* width: 100px;  */
+            /* margin-top: 60px;  */
+            text-align: center; 
+            margin: 0px; 
+            justify-content: center;
+            width: 100%; 
+            margin-bottom: 15px; 
+        }
+
+        #businessImage {
+            /* width: 100%;  */
+            width: 200px; 
+            margin-bottom: 20px; 
+            border-radius: 20px;
+        }
+
+        #businessImageCaption {
+            font-family: Lato;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 2.0em;
+            line-height: 35px;
+            letter-spacing: 0.135em;
+        } 
+
+        #closeButton {
+            /* float: right;  */
+            font-family: Lato; 
+            /* margin-right: 20px; 
+            margin-top: 20px;  */
+            height: 20px; 
+            position: fixed; 
+            right: 20px; 
+            top: 20px; 
+        } 
+
+        .grid-container {
+            font-size: 25px; 
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto auto auto; 
+            text-align: center; 
+            row-gap: 50px; 
+            /* column-gap: 50px;  */
+            width: 70%; 
+            margin: auto; 
+            /* width: 100%; */
+            /* justify-items: center;  */
+        }
+
+
+        .flex-container{
+            display: flex; 
+            flex-direction: row; 
+            flex-wrap: wrap; 
+            justify-content: space-between; 
+            width: 70%; 
+            margin: auto; 
+        }
+        .column1 {
+            flex-basis: 30%; 
+            padding: 15px;
+            /* border: solid red;  */
+            font-size: 25px;
+        }
+
     </style>
 
 </head>
 
 <body>
+<div id="transparentBackground">
     <header>
         <div class="logo">
             <img class="logo-header" src="../static/images/logo.png" height="70px" width="80px" />
@@ -255,96 +427,258 @@
     </div>
 
     <!-- Portfolio -->
-    <h2 class="portfolio">PROJECT TIMELINE</h2>
+    <!-- <h2 class="portfolio">PROJECT TIMELINE</h2>
 
     <div class="w3-container" style="position: relative; top: 190px;">
         <img src="../static/images/projecttimeline2.JPG"/>
-    </div>
+    </div> -->
 
-    <!--<div class="w3-container" style="position: relative; top: 1090px; left: 24px; width: 600px;">
-        <h2 class="page-text" style="top: 20px; left: 160px; font-size: 2.4em; font-weight: normal;">PAST PROJECTS</h2>
-        <h4 class="page-text" style="top: 100px; left: 180px; font-size: 18px; width: 1150px; line-height: 30px;">
+    
+    <!-- <div class="w3-container" style="position: relative; top: 71px; font-family: Lato;">
+        <h2 class="page-text" style="margin-left: 145px; font-size: 2.4em; font-weight: normal; 
+        color: #FFE27B; margin-bottom: 25px; ">PAST PROJECTS</h2>
+        <h4 class="page-text" style="width: 65%; font-size: 18px; line-height: 30px; left: 0; right: 0; margin: auto; 
+        color: white; font-weight:600; margin-bottom: 45px; ">
             Cornerstone Community Consultants has worked with many businesses across various industries. Below are some
             of our past client names and project descriptions.</h4>
-
-        <div class="row" style="position: absolute; left: 310px; top: 200px; width: 900px">
+        <div class="row" style="width: 70%; left: 0; right: 0; margin: auto; font-size: 25px;">
             <div class="column1">
-                <p class="page-text"
-                    style="float: left; font-size: 20px; line-height: 140%; font-weight: 600; text-align: center; width: 25%; margin-right: 1%; margin-bottom: 0.5em;">
-                    <img src="../static/images/bespoke.png" style="width: 100%;" /><span style="color: #FFE27B">Bespoke
-                        Partners</span>
+                <p class="page-text" onclick="showCard('TritonFoodPantry')"
+                    style="float: left; line-height: 140%; font-weight: 600; text-align: center; width: 33%; margin-bottom: 0.5em; ">
+                    <img src="../static/images/imagesInPortfolio/TFP1.jpeg" style="border-radius: 20px; width: 80%; height: 200px; display: block; margin-left: 
+                    auto; margin-right: auto; margin-bottom: 10px;" /> <span style="color: #FFE27B">TRITON FOOD PANTRY</span>
                 </p>
             </div>
             <div class="column1">
-                <p class="page-text"
-                    style="float: left; font-size: 20px; line-height: 140%; font-weight: 600; text-align: center; width: 25%; margin-right: 1%; margin-bottom: 0.5em;">
-                    <img src="../static/images/bespoke.png" style="width: 100%;" /><span style="color: #FFE27B">Bespoke
-                        Partners</span>
+                <p class="page-text" onclick="showCard('BespokePartners')"
+                    style="float: left; line-height: 140%; font-weight: 600; text-align: center; width: 33%; margin-bottom: 0.5em;">
+                    <img src="../static/images/imagesInPortfolio/bespoke.png" style="border-radius: 20px; width: 80%; height: 200px; display: block; margin-left: auto; margin-right: auto; margin-bottom: 10px" /><span style="color: #FFE27B">BESPOKE PARTNERS</span>
                 </p>
             </div>
             <div class="column1">
-                <p class="page-text"
-                    style="float: left; font-size: 20px; line-height: 140%; font-weight: 600; text-align: center; width: 25%; margin-right: 1%; margin-bottom: 0.5em;">
-                    <img src="../static/images/bespoke.png" style="width: 100%;" /><span style="color: #FFE27B">Bespoke
-                        Partners</span>
+                <p class="page-text" onclick="showCard('IHF')"
+                    style="float: left; line-height: 140%; font-weight: 600; text-align: center; width: 33%; margin-bottom: 0.5em;">
+                    <img src="../static/images/imagesInPortfolio/ihfoundation3.png" style="border-radius: 25px; width: 80%; height: 200px; display: block; margin-left: auto; margin-right: auto; margin-bottom: 10px" onclick="showCard('IHF')"/><span style="color: #FFE27B">IHF</span>
                 </p>
             </div>
         </div>
 
-        <div class="row" style="position: absolute; left: 310px; top: 525px; width: 900px">
+        <div class="row" style="position: absolute; top: 900px; width: 70%; left: 0; right: 0; bottom: 0;
+        margin: auto; font-size: 25px;">
             <div class="column1">
-                <p class="page-text"
-                    style="float: left; font-size: 20px; line-height: 140%; font-weight: 600; text-align: center; width: 25%; margin-right: 1%; margin-bottom: 0.5em;">
-                    <img src="../static/images/bespoke.png" style="width: 100%;" /><span style="color: #FFE27B">Bespoke
-                        Partners</span>
+                <p class="page-text" onclick="showCard('DirtyBirds')"
+                    style="float: left; line-height: 140%; font-weight: 600; text-align: center; width: 33%; margin-bottom: 0.5em;">
+                    <img src="../static/images/imagesInPortfolio/dirtybirds.jpeg" style="border-radius: 20px; width: 80%; height: 200px; display: block; left: 0; right: 0; margin: auto; margin-bottom: 10px;"/><span style="color: #FFE27B">DIRTY BIRDS</span>
                 </p>
             </div>
             <div class="column1">
-                <p class="page-text"
-                    style="float: left; font-size: 20px; line-height: 140%; font-weight: 600; text-align: center; width: 25%; margin-right: 1%; margin-bottom: 0.5em;">
-                    <img src="../static/images/bespoke.png" style="width: 100%;" /><span style="color: #FFE27B">Bespoke
-                        Partners</span>
+                <p class="page-text" onclick="showCard('Ransomly')"
+                    style="float: left; line-height: 140%; font-weight: 600; text-align: center; width: 33%; margin-bottom: 0.5em;">
+                    <img src="../static/images/imagesInPortfolio/ransomly1.jpeg" style="border-radius: 20px; width: 80%; height: 200px; display: block; left: 0; right: 0; margin: auto; margin-bottom: 10px;" /><span style="color: #FFE27B">RANSOMLY</span>
                 </p>
             </div>
             <div class="column1">
-                <p class="page-text"
-                    style="float: left; font-size: 20px; line-height: 140%; font-weight: 600; text-align: center; width: 25%; margin-right: 1%; margin-bottom: 0.5em;">
-                    <img src="../static/images/bespoke.png" style="width: 100%;" /><span style="color: #FFE27B">Bespoke
-                        Partners</span>
+                <p class="page-text" onclick="showCard('TritonOutfitters')"
+                    style="float: left; line-height: 140%; font-weight: 600; text-align: center; width: 33%; margin-bottom: 0.5em;">
+                    <img src="../static/images/imagesInPortfolio/tritono2.jpeg" style="border-radius: 20px; width: 80%; height: 200px;  display: block; left: 0; right: 0; margin: auto; margin-bottom: 10px;" /><span style="color: #FFE27B">TRITON OUTFITTERS</span>
                 </p>
             </div>
         </div>
 
-        <div class="row" style="position: absolute; left: 310px; top: 850px; width: 900px">
+        <div class="row" style="position: absolute; top: 850px; left: 0; right: 0; margin: auto; width: 70%; font-size: 25px;">
             <div class="column1">
-                <p class="page-text"
-                    style="float: left; font-size: 20px; line-height: 140%; font-weight: 600; text-align: center; width: 25%; margin-right: 1%; margin-bottom: 0.5em;">
-                    <img src="../static/images/bespoke.png" style="width: 100%;" /><span style="color: #FFE27B">Bespoke
-                        Partners</span>
+                <p class="page-text" onclick="showCard('Seed&Sprout')"
+                    style="float: left; line-height: 140%; font-weight: 600; text-align: center; width: 33%; margin-bottom: 0.5em;">
+                    <img src="../static/images/imagesInPortfolio/seedandsprout.jpeg" style="border-radius: 20px; width: 80%; height: 200px; display: block; left: 0; right: 0; 
+                    margin: auto; margin-bottom: 10px;" /><span style="color: #FFE27B">SEED & SPROUT</span>
                 </p>
             </div>
             <div class="column1">
-                <p class="page-text"
-                    style="float: left; font-size: 20px; line-height: 140%; font-weight: 600; text-align: center; width: 25%; margin-right: 1%; margin-bottom: 0.5em;">
-                    <img src="../static/images/bespoke.png" style="width: 100%;" /><span style="color: #FFE27B">Bespoke
-                        Partners</span>
+                <p class="page-text" onclick="showCard('WhatsUpMom')"
+                    style="float: left; line-height: 140%; font-weight: 600; text-align: center; width: 33%; margin-bottom: 0.5em;">
+                    <img src="../static/images/imagesInPortfolio/whatsupmoms.jpeg" style="border-radius: 20px; width: 80%; height: 200px; display: block; left: 0; right: 0; 
+                    margin: auto; margin-bottom: 10px;" /><span style="color: #FFE27B">WHAT'S UP MOMS</span>
                 </p>
-            </div>
-            <div class="column1">
+            </div> -->
+            <!-- <div class="column1">
                 <p class="page-text"
-                    style="float: left; font-size: 20px; line-height: 140%; font-weight: 600; text-align: center; width: 25%; margin-right: 1%; margin-bottom: 0.5em;">
-                    <img src="../static/images/bespoke.png" style="width: 100%;" /><span style="color: #FFE27B">Bespoke
-                        Partners</span>
+                    style="float: left; line-height: 140%; font-weight: 600; text-align: center; width: 33%; margin-bottom: 0.5em;">
+                    <img src="../static/images/bespoke.png" style="border-radius: 20px; width: 80%; height: 200px; display: block; left: 0; right: 0; 
+                    margin: auto;" /><span style="color: #FFE27B">TRITON FOOD PANTRY</span>
                 </p>
-            </div>
+            </div> -->
+        <!-- </div>
+    </div> -->
+
+    <!--grid attempt-->
+<!-- <div class="w3-container" style="position: relative; top: 71px; font-family: Lato; margin: auto; width: 100%;">
+    <h2 class="page-text" style="font-size: 2.4em; font-weight: normal; 
+    color: #FFE27B; margin-bottom: 25px; margin-left: 145px; ">PAST PROJECTS</h2>
+    <h4 class="page-text" style="font-size: 18px; line-height: 30px; 
+    color: white; font-weight:600; width: 65%; margin-bottom: 45px; margin-left: auto; margin-right: auto; ">
+        Cornerstone Community Consultants has worked with many businesses across various industries. Below are some
+        of our past client names and project descriptions.</h4>
+
+    <div class="grid-container">
+        <div class="column1">
+            <p class="page-text" onclick="showCard('TritonFoodPantry')"
+                style="line-height: 140%; font-weight: 600; text-align: center; margin-bottom: 0.5em;">
+                <img src="../static/images/imagesInPortfolio/TFP1.jpeg" style="border-radius: 20px; height: 200px; display: block; margin-bottom: 10px; width: 70%; margin-left: auto; margin-right: auto;" /> <span style="color: #FFE27B">TRITON FOOD PANTRY</span>
+            </p>
+        </div>
+        <div class="column1">
+            <p class="page-text" onclick="showCard('BespokePartners')"
+                style="line-height: 140%; font-weight: 600; text-align: center; margin-bottom: 0.5em;">
+                <img src="../static/images/imagesInPortfolio/bespoke.png" style="border-radius: 20px; height: 200px; display: block; margin-bottom: 10px; width: 70%; margin-left: auto; margin-right: auto;" /><span style="color: #FFE27B">BESPOKE PARTNERS</span>
+            </p>
+        </div>
+        <div class="column1">
+            <p class="page-text" onclick="showCard('IHF')"
+                style="line-height: 140%; font-weight: 600; text-align: center; margin-bottom: 0.5em;">
+                <img src="../static/images/imagesInPortfolio/ihfoundation3.png" style="border-radius: 25px; height: 200px; display: block; margin-bottom: 10px; width: 70%; margin-left: auto; margin-right: auto;" onclick="showCard('IHF')"/><span style="color: #FFE27B">IHF</span>
+            </p>
+        </div>
+
+
+        <div class="column1">
+            <p class="page-text" onclick="showCard('DirtyBirds')"
+                style="line-height: 140%; font-weight: 600; text-align: center; margin-bottom: 0.5em;">
+                <img src="../static/images/imagesInPortfolio/dirtybirds.jpeg" style="border-radius: 20px; height: 200px; display: block; margin-bottom: 10px; width: 70%; margin-left: auto; margin-right: auto;"/><span style="color: #FFE27B">DIRTY BIRDS</span>
+            </p>
+        </div>
+        <div class="column1">
+            <p class="page-text" onclick="showCard('Ransomly')"
+                style="line-height: 140%; font-weight: 600; text-align: center; margin-bottom: 0.5em;">
+                <img src="../static/images/imagesInPortfolio/ransomly1.jpeg" style="border-radius: 20px; height: 200px; display: block; margin-bottom: 10px; width: 70%; margin-left: auto; margin-right: auto;" /><span style="color: #FFE27B">RANSOMLY</span>
+            </p>
+        </div>
+        <div class="column1">
+            <p class="page-text" onclick="showCard('TritonOutfitters')"
+                style="line-height: 140%; font-weight: 600; text-align: center; margin-bottom: 0.5em;">
+                <img src="../static/images/imagesInPortfolio/tritono2.jpeg" style="border-radius: 20px; height: 200px;  display: block; left: 0; right: 0; margin: auto; margin-bottom: 10px; width: 70%; " /><span style="color: #FFE27B">TRITON OUTFITTERS</span>
+            </p>
+        </div>
+
+        <div class="column1">
+            <p class="page-text" onclick="showCard('Seed&Sprout')"
+                style="line-height: 140%; font-weight: 600; text-align: center; margin-bottom: 0.5em;">
+                <img src="../static/images/imagesInPortfolio/seedandsprout.jpeg" style="border-radius: 20px; height: 200px; display: block; left: 0; right: 0; 
+                margin: auto; margin-bottom: 10px; width: 70%; " /><span style="color: #FFE27B">SEED & SPROUT</span>
+            </p>
+        </div>
+        <div class="column1">
+            <p class="page-text" onclick="showCard('WhatsUpMom')"
+                style="line-height: 140%; font-weight: 600; text-align: center; margin-bottom: 0.5em;">
+                <img src="../static/images/imagesInPortfolio/whatsupmoms.jpeg" style="border-radius: 20px; height: 200px; display: block; left: 0; right: 0; 
+                margin: auto; margin-bottom: 10px; width: 70%;" /><span style="color: #FFE27B">WHAT'S UP MOMS</span>
+            </p>
         </div>
     </div>
-    <div class="w3-container"
+</div>  -->
+
+<div class="w3-container" style="position: relative; top: 71px; font-family: Lato; margin: auto; width: 100%;">
+    <h2 class="page-text" style="font-size: 2.4em; font-weight: normal; 
+    color: #FFE27B; margin-bottom: 25px; margin-left: 145px;">PAST PROJECTS</h2>
+    <h4 class="page-text" style="font-size: 18px; line-height: 30px; 
+    color: white; font-weight:600; width: 65%; margin-bottom: 45px; margin-left: auto; margin-right: auto;">
+        Cornerstone Community Consultants has worked with many businesses across various industries. Below are some
+        of our past client names and project descriptions.</h4>
+
+    <div class="flex-container">
+        <div class="column1">
+            <p class="page-text" 
+                style="line-height: 140%; font-weight: 600; text-align: center; margin-bottom: 0.5em; ">
+                <img src="../static/images/imagesInPortfolio/TFP1.jpeg" onclick="showCard('TritonFoodPantry')" style="border-radius: 20px; height: 200px; display: block; margin-bottom: 10px; margin-left: auto; margin-right: auto; width: 270px;" /> <span onclick="showCard('TritonFoodPantry')" style="color: #FFE27B;">TRITON FOOD PANTRY</span>
+            </p>
+        </div>
+        <div class="column1">
+            <p class="page-text" 
+                style="line-height: 140%; font-weight: 600; text-align: center; margin-bottom: 0.5em;">
+                <img src="../static/images/imagesInPortfolio/bespoke.png" onclick="showCard('BespokePartners')" style="border-radius: 20px; height: 200px; display: block; margin-bottom: 10px; margin-left: auto; margin-right: auto; width: 270px;" /><span onclick="showCard('BespokePartners')" style="color: #FFE27B">BESPOKE PARTNERS</span>
+            </p>
+        </div>
+        <div class="column1">
+            <p class="page-text" 
+                style="line-height: 140%; font-weight: 600; text-align: center; margin-bottom: 0.5em;">
+                <img src="../static/images/imagesInPortfolio/ihfoundation3.png" onclick="showCard('IHF')" style="border-radius: 25px; height: 200px; display: block; margin-bottom: 10px; margin-left: auto; margin-right: auto; width: 270px;" onclick="showCard('IHF')"/><span onclick="showCard('IHF')" style="color: #FFE27B">IHF</span>
+            </p>
+        </div>
+    <!-- </div> -->
+
+
+    <!-- <div class="flex-container"> -->
+        <div class="column1">
+            <p class="page-text" 
+                style="line-height: 140%; font-weight: 600; text-align: center; margin-bottom: 0.5em;">
+                <img src="../static/images/imagesInPortfolio/dirtybirds.jpeg" onclick="showCard('DirtyBirds')" style="border-radius: 20px; height: 200px; display: block; margin-bottom: 10px; margin-left: auto; margin-right: auto; width: 270px;"/><span onclick="showCard('DirtyBirds')" style="color: #FFE27B">DIRTY BIRDS</span>
+            </p>
+        </div>
+        <div class="column1">
+            <p class="page-text" 
+                style="line-height: 140%; font-weight: 600; text-align: center; margin-bottom: 0.5em;">
+                <img src="../static/images/imagesInPortfolio/ransomly1.jpeg" onclick="showCard('Ransomly')" style="border-radius: 20px; height: 200px; display: block; margin-bottom: 10px; margin-left: auto; margin-right: auto; width: 270px;" /><span onclick="showCard('Ransomly')" style="color: #FFE27B">RANSOMLY</span>
+            </p>
+        </div>
+        <div class="column1">
+            <p class="page-text" 
+                style="line-height: 140%; font-weight: 600; text-align: center; margin-bottom: 0.5em;">
+                <img src="../static/images/imagesInPortfolio/tritono2.jpeg" onclick="showCard('TritonOutfitters')" style="border-radius: 20px; height: 200px;  display: block; margin-left: auto; margin-right: auto; margin-bottom: 10px; width: 270px;" /><span onclick="showCard('TritonOutfitters')" style="color: #FFE27B">TRITON OUTFITTERS</span>
+            </p>
+        </div>
+    <!-- </div> -->
+    <!-- <div class="flex-container"> -->
+        <div class="column1">
+            <p class="page-text" 
+                style="line-height: 140%; font-weight: 600; text-align: center; margin-bottom: 0.5em;">
+                <img src="../static/images/imagesInPortfolio/seedandsprout.jpeg" onclick="showCard('Seed&Sprout')" style="border-radius: 20px; height: 200px; display: block; left: 0; right: 0; 
+                margin: auto; margin-bottom: 10px; width: 270px;" /><span onclick="showCard('Seed&Sprout')" style="color: #FFE27B">SEED & SPROUT</span>
+            </p>
+        </div>
+        <div class="column1">
+            <p class="page-text" 
+                style="line-height: 140%; font-weight: 600; text-align: center; margin-bottom: 0.5em;">
+                <img src="../static/images/imagesInPortfolio/whatsupmoms.jpeg" onclick="showCard('WhatsUpMom')" style="border-radius: 20px; height: 200px; display: block; left: 0; right: 0; 
+                margin: auto; margin-bottom: 10px; width: 270px;" /><span onclick="showCard('WhatsUpMom')" style="color: #FFE27B">WHAT'S UP MOMS</span>
+            </p>
+        </div>
+    <!-- </div> -->
+    </div>
+</div>
+<!-- ending div for the transparent background -->
+</div> 
+
+    <div id = cardForPastProjects>
+        <div>
+            <button id = closeButton onclick="closeCard()"> X </button>
+        </div>
+        <div id=cardImage>
+            <img id=businessImage src= "../static/images/imagesInPortfolio/bespoke.png" > 
+            <p id = businessImageCaption> BESPOKE PARTNERS</p>
+        </div>
+        <br> 
+        <div id=cardContent> 
+            <p id=projectDescriptionTitle> Project Description </p>
+            <p id=descriptionOfBusiness> In the past five years, CCC has worked with Bespoke Partners multiple times. Bespoke Partners is an executive search firm, 
+                and they have enlisted our organization to help with increasing the company profile, performing industry research for 
+                targeted investment. One of our projects with them involved campus recruitment research.
+            </p>
+        </div>
+        
+    </div>
+    <script>
+
+    </script>
+    <!-- <div class="w3-container"
         style="position: relative; top: 2270px; display: flex; justify-content: center; align-items: center; align-content: center;">
         <p class="page-text" style="font-size: 18px; text-align: center;">Interested in working with us?</p>
         <a href="contact.html" class="button" style="text-align: center; top: 35px; width: 100px;">Contact Us</a>
         <p class="page-text" style="font-size: 18px; text-align: center; top: 110px;">We will be in touch!</p>
-    </div>-->
+    </div> -->
+    <!-- <div class="w3-container" style="position: relative; top: 3720px; display: flex; justify-content: center; align-items: center; align-content: center;">
+        <p class="page-text" style="font-size: 18px; text-align: center;">Interested in working with us?</p>
+        <a href="contact.html" class="button" style="text-align: center; top: 35px; width: 100px;">Contact Us</a>
+        <p class="page-text" style="font-size: 18px; text-align: center; top: 110px;">We will be in touch!</p>
+    </div> -->
 
     <script>
         let navBurger = document.querySelector('.menu-toggle');
@@ -360,6 +694,96 @@
         submenu[1].addEventListener('click', function () {
             submenuElement[1].classList.toggle('showing');
         })
+
+        function showCard(business) {
+            let body = document.getElementsByTagName("body")[0]; 
+            let descriptionOfBusiness = document.getElementById("descriptionOfBusiness"); 
+            let cardForPastProjects = document.getElementById("cardForPastProjects");
+            let image = document.getElementById("businessImage"); 
+            let transparentBackground = document.getElementById("transparentBackground"); 
+            let caption = document.getElementById("businessImageCaption"); 
+
+            // cardForPastProjects.style.display = "block"; 
+            cardForPastProjects.style.display = "flex"; 
+
+            transparentBackground.style.opacity = 0.2; 
+
+            cardForPastProjects.style.opacity = 1; 
+            if (business == 'TritonFoodPantry') {
+                descriptionOfBusiness.innerHTML = 
+                "CCC introduced ideas to adjust to the rapidly increasing student population such as ways to rework the point system to help the pantry provide its services to more people. Our consultants recommended methods for increased collaboration with Associated Students, a Standard Operating Procedure, to augment its operations and other initiatives to help address food insecurity on campus through donation bins and the convenience of a Mobile Application."; 
+
+                image.src = "../static/images/imagesInPortfolio/TFP1.jpeg";
+
+                caption.innerHTML = "TRITON FOOD PANTRY"; 
+            }
+            else if (business == "BespokePartners") {
+                descriptionOfBusiness.innerHTML = 
+                "In the past five years, CCC has worked with Bespoke Partners multiple times. Bespoke Partners is an executive search firm, and they have enlisted our organization to help with increasing the company profile, performing industry research for targeted investment. One of our projects with them involved campus recruitment research.";
+
+                image.src = "../static/images/imagesInPortfolio/bespoke.png"; 
+
+                caption.innerHTML = "BESPOKE PARTNERS"; 
+            }
+            else if (business == "IHF") {
+                descriptionOfBusiness.innerHTML = 
+                "Cornerstone Community Consultants worked with IHF in refining their recruitment strategy and in building a pipeline of potential partners interested in working with the nonprofit. CCC gathered insight of leading industry competitors and conducted research to uncover recruitment strategy and assess trends in the pertaining industry to gain a finer understanding of the bottlenecks IHF encounters. Our consultants delivered strategic recommendations for IHF in order to increase recruit volume and designed sample marketing material for online/offline distribution.";
+
+                image.src = "../static/images/imagesInPortfolio/ihfoundation3.png"; 
+
+                caption.innerHTML = "IHF"; 
+            }
+            else if (business == "DirtyBirds") {
+                descriptionOfBusiness.innerHTML = 
+                "Dirty Birds Bar and Grill enlisted the services of Cornerstone Community Consultants to help their business with marketing. CCC centered its analysis on increasing brand awareness through partnerships with student organizations, catering opportunities, and physical marketing ideas. Our consultants outlined further off-campus marketing strategies by putting forward best social media practices and recommendations for social media content.";
+
+                image.src = "../static/images/imagesInPortfolio/dirtybirds.jpeg"; 
+
+                caption.innerHTML = "DIRTY BIRDS"; 
+            }
+            else if (business == "Ransomly") {
+                descriptionOfBusiness.innerHTML = 
+                "Cornerstone Community Consultants assisted Ransomly with growing brand awareness by conducting extensive research on specific San Diego based organizations for partnerships and expansion. CCC also identified San Diego based investors viable for the growth of the business.";
+
+                image.src = "../static/images/imagesInPortfolio/ransomly1.jpeg"; 
+
+                caption.innerHTML = "RANSOMLY"; 
+            }
+            else if (business == "TritonOutfitters") {
+                descriptionOfBusiness.innerHTML = 
+                "CCC provided suggestions regarding the operations of Triton Outfitters and recommended the use of productivity websites which gives teams the ability to track progress progression and hold collaborators accountable and organized. Consultants analyzed three of the most popular productivity websites and provided an in-depth overview into the features of each and how it can be used to make the organization more organized and efficient.";
+
+                image.src = "../static/images/imagesInPortfolio/tritono2.jpeg"; 
+
+                caption.innerHTML = "TRITON OUTFITTERS"; 
+
+            }
+            else if (business == "Seed&Sprout") {
+                descriptionOfBusiness.innerHTML = 
+                "CCC was tasked with creating action plans regarding social media posting strategy, promotional campaigns, and SEO best practices for Seed and Sprout. Additionally, our consultants provided recommendations regarding menu design improvements, university sponsorship opportunities, and relevant on-campus organizations to market to.";
+
+                image.src = "../static/images/imagesInPortfolio/seedandsprout.jpeg"; 
+
+                caption.innerHTML = "SEED & SPROUT"; 
+            }
+            else if (business == "WhatsUpMom") {
+                descriptionOfBusiness.innerHTML = 
+                "CCC worked with the YouTube channel “What’s Up Moms” at the startup stage to generate a profitable growth strategy. Our consultants provided rigorous research to pinpoint effective ways to incorporate data analytics, a proposal of 3 new sub-channels, and competitor analysis. “What’s Up Moms” is currently the #1 parenting channel on YouTube with over 3.1 million subscribers.";
+
+                image.src = "../static/images/imagesInPortfolio/whatsupmoms.jpeg"; 
+
+                caption.innerHTML = "WHAT'S UP MOMS"; 
+            }
+
+
+        }
+
+        function closeCard() {
+            let cardForPastProjects = document.getElementById("cardForPastProjects");
+            let transparentBackground = document.getElementById("transparentBackground"); 
+            cardForPastProjects.style.display = "none"; 
+            transparentBackground.style.opacity = 1; 
+        }
     </script>
 
 </body>
