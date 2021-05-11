@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Our Services</title>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <script src="https://kit.fontawesome.com/731b3fa837.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        body {
+            background: #1D1D1D;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        /*Navbar*/
+
+        header {
+            background: #1D1D1D;
+            height: 110px;
+            width: 100%;
+            position: fixed;
+            z-index: 20;
+        }
+
+        header * {
+            color: white;
+            font-family: 'Lato', sans-serif;
+        }
+
+        header .logo {
+            float: left;
+            display: flex;
+            color: white;
+            padding: 20px 0px 20px 5vw;
+        }
+
+        .logo>img {
+            margin-right: 5px;
+        }
+
+        .logo-title {
+            font-family: 'Lato', sans-serif;
+            font-size: 18px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        header ul {
+            float: right;
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+            margin-right: 5vw;
+            margin-top: 25px;
+        }
+
+        header ul li {
+            float: left;
+            position: relative;
+        }
+
+        header ul li ul {
+            position: absolute;
+            top: 38px;
+            width: 150px;
+            display: none;
+        }
+
+        header ul li:hover ul {
+            display: block;
+        }
+
+        header ul li ul li {
+            width: 100%;
+        }
+
+        header ul li ul li a {
+            background: #1D1D1D;
+            padding: 10px;
+        }
+
+        header ul li a {
+            display: block;
+            padding: 21px;
+            font-size: 1.1em;
+            text-decoration: none;
+        }
+
+        header ul li a:hover {
+            background: #444444;
+            transition: 0.5s;
+        }
+
+        header .menu-toggle {
+            display: none;
+        }
+
+        @media screen and (max-width: 790px) {
+            header {
+                position: fixed;
+            }
+
+            header ul {
+                width: 100%;
+                background: #1D1D1D;
+                margin-top: 0px;
+                margin-right: 0px;
+                max-height: 0px;
+                overflow: hidden;
+            }
+
+            .showing {
+                max-height: 100em;
+            }
+
+            header ul li {
+                width: 100%;
+            }
+
+            header ul li ul {
+                position: static;
+                display: block;
+                width: 100%;
+            }
+
+            header ul li ul li a {
+                padding: 10px 10px 10px 50px;
+
+            }
+
+            header .menu-toggle {
+                display: block;
+                position: absolute;
+                right: 40px;
+                top: 40px;
+                font-size: 1.9em;
+                color: white;
+            }
+
+            header .logo {
+                margin-left: 0.1em;
+            }
+        }
+
+
+        /*Title Header*/
+
+        .title-container {
+            width: 100%;
+            height: 250px;
+            background: url("../static/images/radys.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            padding-top: 110px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .title {
+            font-family: 'Lato', sans-serif;
+            font-weight: bold;
+            font-size: 50px;
+            letter-spacing: 0.13em;
+            color: white;
+            text-align: center;
+            white-space: nowrap;
+            margin: 0px 10px 0px 70px;
+        }
+
+        .lines {
+            width: 100%;
+            margin-right: 50px;
+        }
+
+        .rectangle {
+            height: 4px;
+            width: 100%;
+            min-width: none;
+            background: white;
+        }
+
+        .rectangle:nth-child(2) {
+            background: #FFE27C;
+            margin-top: 10px;
+        }
+
+        /*Content*/
+        .content-title {
+            font-size: 40px;
+            font-weight: 600;
+            font-family: 'Lato', sans-serif;
+            letter-spacing: 0.135em;
+            color: #FFE27B;
+            margin: 10vh 0px 3vh 10vw;
+        }
+
+        .content {
+            color: white;
+            font-family: 'Lato', sans-serif;
+            display: flex;
+            margin: 0px 10vw;
+            align-items: center;
+
+        }
+
+        .content-text {
+            letter-spacing: 0.135em;
+        }
+
+        .content-text.flip {
+            margin-left: 40px;
+        }
+
+        .content-text p {
+            position: relative;
+            text-align: left;
+            line-height: 29px;
+            font-size: 1.5em;
+        }
+
+        .content-text ul {
+            margin: 0.75em 0;
+            padding: 0 1em;
+            list-style: none;
+            margin-left: 40px;
+            font-size: 1.em;
+        }
+
+        .content-text ul li::before {
+            content: "";
+            border-color: transparent #FFF;
+            border-style: solid;
+            border-width: 0.35em 0 0.35em 0.45em;
+            display: block;
+            height: 0;
+            width: 0;
+            left: -1em;
+            top: 0.9em;
+            position: relative;
+        }
+
+        .reference {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .reference a {
+            color: white;
+            text-decoration: none;
+            font-family: 'Courier New', sans-serif;
+        }
+
+        .reference a:hover {
+            color: #c8c8c8;
+        }
+
+        @media screen and (max-width: 840px) {
+            .content-title {
+                text-align: center;
+                margin-left: 0px;
+            }
+
+            .content {
+                flex-wrap: wrap-reverse;
+            }
+
+            .content-text.flip {
+                margin-left: 0px;
+            }
+
+            .content.reverse {
+                flex-wrap: wrap;
+            }
+
+            .content-animation {
+                margin: auto;
+            }
+
+            .content-text {
+                margin-top: 20px;
+            }
+        }
+
+        /*Footer*/
+
+        footer {
+            margin-top: 200px;
+            background: #FFFDF4;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .footer-links a img {
+            height: 40px;
+            width: 40px;
+        }
+
+        .footer-links {
+            margin-left: auto;
+            margin-right: 3em;
+            display: flex;
+            flex-wrap: nowrap;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            margin-left: 1em;
+        }
+
+        .footer-logo img {
+            height: 60px;
+            width: 60px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            margin-left: 1.5em;
+        }
+
+        .footer-logo h8 {
+            margin-left: 1em;
+            font-family: 'Lato', sans-serif;
+            font-size: 1.1em;
+            letter-spacing: 0.135em;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Page Navigation Bar -->
+    <header>
+        <a href="../ccc/">
+            <div class="logo">
+                <img class="logo-header" src="../static/images/logo.png" height="70px" width="80px" />
+                <div class="logo-title">
+                    <div><span style="color: #FFE27C;">C</span>ornerstone</div>
+                    <div><span style="color: #FFE27C;">C</span>ommunity</div>
+                    <div><span style="color: #FFE27C;">C</span>onsultants</div>
+                </div>
+            </div>
+        </a>
+        <i class="fas fa-bars menu-toggle"></i>
+        <ul class="nav">
+            <li><a href="about.html">About Us</a></li>
+            <li>
+                <a class="submenu">
+                    Work With Us
+                    <i class="fas fa-sort-down" style="font-size: 1.1em; margin-left: 0.1em;"></i>
+                </a>
+                <ul>
+                    <li><a href="services.html">Our Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                </ul>
+            </li>
+            <li>
+                <a class="submenu">
+                    Join Us
+                    <i class="fas fa-sort-down" style="font-size: 1.1em; margin-left: 0.1em;"></i>
+                </a>
+                <ul>
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="recruitment.html">Recruitment</a></li>
+                </ul>
+            </li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </header>
+
+    <!-- Header Picture -->
+    <div class="title-container">
+        <div class="title">OUR SERVICES</div>
+
+        <div class="lines">
+            <div class="rectangle"></div>
+            <div class="rectangle"></div>
+        </div>
+    </div>
+
+    <!-- Marketing -->
+    <h2 class="content-title">Marketing</h2>
+
+    <div class="content">
+        <div class="content-text">
+            <p>
+                We work with your company to ensure the implementation of effective marketing strategies and the
+                protection of your brand image.
+            </p>
+            <ul>
+                <li>Market Analysis and Research</li>
+                <li>Marketing Strategy</li>
+                <li>Social Media Marketing</li>
+                <li>Online Advertisements</li>
+                <li>Competitive Research</li>
+                <li>Graphic and Web Design</li>
+            </ul>
+        </div>
+        <div class="content-animation">
+            <img src="../static/images/mobile-marketing-animate.svg"
+                style="position:relative; width: 450px; height: 393px;" />
+        </div>
+    </div>
+
+    <!-- Financial Analysis -->
+    <h2 class="content-title">Financial Analysis</h2>
+
+    <div class="content reverse">
+        <div class="content-animation">
+            <img src="../static/images/financial-data-animate.svg" style="width: 450px; height: 393px;" />
+        </div>
+        <div class="content-text flip">
+            <p>
+                We aim to help your company develop sustainable wealth strategies that will eliminate risk and
+                propel you towards your financial goals.
+            </p>
+            <ul>
+                <li>Profit Analysis</li>
+                <li>Cash Flow Planning</li>
+                <li>Budgeting</li>
+                <li>Financial Forecasting</li>
+                <li>Pricing Strategy</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Operations Management -->
+    <h2 class="content-title">Operations Management</h2>
+
+    <div class="content">
+        <div class="content-text">
+            <p>
+                Our objective is to help your company increase efficiency while maintaining the quality of your
+                product or service.
+            </p>
+            <ul>
+                <li>Operations research</li>
+                <li>Business Process Management</li>
+                <li>Supply Chain Management</li>
+                <li>Optimization</li>
+                <li>Design Cost Saving Solutions</li>
+                <li>Risk Mitigation</li>
+                <li>Outsourcing</li>
+                <li>Research and Development</li>
+            </ul>
+        </div>
+        <div class="content-animation">
+            <img src="../static/images/statistics-animate.svg" style="width: 500px; height: 300px;" />
+        </div>
+    </div>
+
+    </div>
+
+    <!-- Software Development -->
+    <h2 class="content-title">Software Development</h2>
+
+    <div class="content reverse">
+        <div class="content-animation">
+            <img src="../static/images/development-animate.svg" style="width: 500px; height: 393px;" />
+        </div>
+        <div class="content-text flip">
+            <p>
+                We offer software development and web design services to help your company establish a unique
+                brand image and implement user-friendly designs.
+            </p>
+            <ul>
+                <li>Website Design</li>
+                <li>UI/UX Design</li>
+                <li>Full Stack Development</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="reference">
+        <a href="https://storyset.com/business">Illustrations by Freepik Storyset</a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">
+            <img class="logo-footer" src="../static/images/blacklogo.png" />
+            <h8>Cornerstone Community Consultants</h8>
+        </div>
+        <div class="footer-links">
+            <a href="https://www.linkedin.com/company/cornerstone-community-consultants/about/">
+                <img class="linkedin-footer" src="../static/images/linkedinfooter.svg">
+            </a>
+            <a href="https://www.instagram.com/ucsdcornerstone/">
+                <img class="instagram-footer" src="../static/images/instagramfooter.svg">
+            </a>
+            <a href="https://www.facebook.com/cornerstonecommunityconsultants/">
+                <img class="facebook-footer" src="../static/images/facebookfooter.svg">
+            </a>
+            <a href="mailto:ucsd.cornerstone@gmail.com">
+                <img class="mail-footer2" src="../static/images/mail-footer2.svg">
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        let navBurger = document.querySelector('.menu-toggle');
+        let navigation = document.querySelector('.nav');
+        let submenu = document.querySelectorAll('.submenu');
+        let submenuElement = document.querySelectorAll('.nav ul');
+        navBurger.addEventListener('click', function () {
+            navigation.classList.toggle('showing');
+        });
+        submenu[0].addEventListener('click', function () {
+            submenuElement[0].classList.toggle('showing');
+        })
+        submenu[1].addEventListener('click', function () {
+            submenuElement[1].classList.toggle('showing');
+        })
+    </script>
+</body>
+
+</html>

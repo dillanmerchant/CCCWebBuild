@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Recruitment</title>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <script src="https://kit.fontawesome.com/731b3fa837.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        body {
+            background: #1D1D1D;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        /*Navbar*/
+
+        header {
+            background: #1D1D1D;
+            height: 110px;
+            width: 100%;
+            position: fixed;
+        }
+
+        header * {
+            color: white;
+            font-family: 'Lato', sans-serif;
+        }
+
+        header .logo {
+            float: left;
+            display: flex;
+            color: white;
+            padding: 20px 0px 20px 5vw;
+        }
+
+        .logo>img {
+            margin-right: 5px;
+        }
+
+        .logo-title {
+            font-family: 'Lato', sans-serif;
+            font-size: 18px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        header ul {
+            float: right;
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+            margin-right: 5vw;
+            margin-top: 25px;
+        }
+
+        header ul li {
+            float: left;
+            position: relative;
+        }
+
+        header ul li ul {
+            position: absolute;
+            top: 38px;
+            width: 150px;
+            display: none;
+        }
+
+        header ul li:hover ul {
+            display: block;
+        }
+
+        header ul li ul li {
+            width: 100%;
+        }
+
+        header ul li ul li a {
+            background: #1D1D1D;
+            padding: 10px;
+        }
+
+        header ul li a {
+            display: block;
+            padding: 21px;
+            font-size: 1.1em;
+            text-decoration: none;
+        }
+
+        header ul li a:hover {
+            background: #444444;
+            transition: 0.5s;
+        }
+
+        header .menu-toggle {
+            display: none;
+        }
+
+        @media screen and (max-width: 790px) {
+            header {
+                position: fixed;
+            }
+
+            header ul {
+                width: 100%;
+                background: #1D1D1D;
+                margin-top: 0px;
+                margin-right: 0px;
+                max-height: 0px;
+                overflow: hidden;
+            }
+
+            .showing {
+                max-height: 100em;
+            }
+
+            header ul li {
+                width: 100%;
+            }
+
+            header ul li ul {
+                position: static;
+                display: block;
+                width: 100%;
+            }
+
+            header ul li ul li a {
+                padding: 10px 10px 10px 50px;
+
+            }
+
+            header .menu-toggle {
+                display: block;
+                position: absolute;
+                right: 40px;
+                top: 40px;
+                font-size: 1.9em;
+                color: white;
+            }
+
+            header .logo {
+                margin-left: 0.1em;
+            }
+        }
+
+
+        /*Title Header*/
+
+        .title-container {
+            width: 100%;
+            height: 250px;
+            background: url("../static/images/radys.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            padding-top: 110px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .title {
+            font-family: 'Lato', sans-serif;
+            font-weight: bold;
+            font-size: 50px;
+            letter-spacing: 0.13em;
+            color: white;
+            text-align: center;
+            white-space: nowrap;
+            margin: 0px 10px 0px 70px;
+        }
+
+        .lines {
+            width: 100%;
+            margin-right: 50px;
+        }
+
+        .rectangle {
+            height: 4px;
+            width: 100%;
+            min-width: none;
+            background: white;
+        }
+
+        .rectangle:nth-child(2) {
+            background: #FFE27C;
+            margin-top: 10px;
+        }
+
+        /*Content*/
+
+        .subtitle {
+            display: flex;
+            margin: 10vh 0px 3vh 10vw;
+        }
+
+        .timeline {
+            font-size: 2.8em;
+            font-weight: normal;
+            color: white;
+            font-family: 'Lato', sans-serif;
+            letter-spacing: 0.13em;
+            margin-right: 20px;
+        }
+
+        .button {
+            background-color: #1D1D1D;
+            border: 2px solid #FFE27B;
+            color: #FFE27B;
+            text-align: center;
+            text-decoration: none;
+            font-family: 'Lato', sans-serif;
+            font-size: 18px;
+            cursor: pointer;
+            transition-duration: 0.4s;
+            padding: 10px 24px;
+            margin: auto 0;
+        }
+
+        .button:hover {
+            background-color: #FFE27B;
+            color: black;
+        }
+
+        .button:active {
+            background-color: #FFE27B;
+            transform: translateY(4px);
+        }
+
+        .recruit-content {
+            text-align: center;
+            color: white;
+            font-family: 'Lato', sans-serif;
+            font-size: 20px;
+            letter-spacing: 0.135em;
+        }
+
+        .page-text {
+            margin: 35px 1em;
+        }
+
+        .faq {
+            font-size: 2.2em;
+            font-weight: normal;
+            color: white;
+            font-family: 'Lato', sans-serif;
+            margin: 17vh 0px 3vh 10vw;
+            letter-spacing: 0.13em;
+        }
+
+        .accordion-wrap {
+            margin: 0 auto;
+            width: 80%;
+            color: white;
+        }
+
+        .accordion {
+            background-color: #1D1D1D;
+            color: white;
+            font-family: 'Lato', sans-serif;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 1.25em;
+            letter-spacing: 0.135em;
+            transition: 0.4s;
+        }
+
+        .active,
+        .accordion:hover {
+            background-color: #444;
+        }
+
+        .accordion:after {
+            content: '\002B';
+            font-weight: bold;
+            color: #FFF;
+            font-size: 13px;
+            float: right;
+            margin-left: 5px;
+        }
+
+        .active:after {
+            content: "\2212";
+        }
+
+        .panel {
+            color: white;
+            font-family: 'Lato', sans-serif;
+            letter-spacing: 0.135em;
+            padding: 20px;
+            display: none;
+            background-color: #1D1D1D;
+            overflow: hidden;
+        }
+
+        @media screen and (max-width: 980px) {
+            .faq {
+                margin-left: 0px;
+                margin-right: 0px;
+                text-align: center;
+            }
+
+            .subtitle {
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                margin-left: 0px;
+                margin-right: 0px;
+            }
+
+            .timeline {
+                text-align: center;
+                margin-right: 0px;
+                margin-bottom: 15px;
+            }
+        }
+
+
+
+        /*Footer*/
+
+        footer {
+            margin-top: 200px;
+            background: #FFFDF4;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .footer-links a img {
+            height: 40px;
+            width: 40px;
+        }
+
+        .footer-links {
+            margin-left: auto;
+            margin-right: 3em;
+            display: flex;
+            flex-wrap: nowrap;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            margin-left: 1em;
+        }
+
+        .footer-logo img {
+            height: 60px;
+            width: 60px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            margin-left: 1.5em;
+        }
+
+        .footer-logo h8 {
+            margin-left: 1em;
+            font-family: 'Lato', sans-serif;
+            font-size: 1.1em;
+            letter-spacing: 0.135em;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Page Navigation Bar -->
+    <header>
+        <a href="../ccc/">
+            <div class="logo">
+                <img class="logo-header" src="../static/images/logo.png" height="70px" width="80px" />
+                <div class="logo-title">
+                    <div><span style="color: #FFE27C;">C</span>ornerstone</div>
+                    <div><span style="color: #FFE27C;">C</span>ommunity</div>
+                    <div><span style="color: #FFE27C;">C</span>onsultants</div>
+                </div>
+            </div>
+        </a>
+        <i class="fas fa-bars menu-toggle"></i>
+        <ul class="nav">
+            <li><a href="about.html">About Us</a></li>
+            <li>
+                <a class="submenu">
+                    Work With Us
+                    <i class="fas fa-sort-down" style="font-size: 1.1em; margin-left: 0.1em;"></i>
+                </a>
+                <ul>
+                    <li><a href="services.html">Our Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                </ul>
+            </li>
+            <li>
+                <a class="submenu">
+                    Join Us
+                    <i class="fas fa-sort-down" style="font-size: 1.1em; margin-left: 0.1em;"></i>
+                </a>
+                <ul>
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="recruitment.html">Recruitment</a></li>
+                </ul>
+            </li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </header>
+
+    <!-- Header Picture -->
+    <div class="title-container">
+        <div class="title">RECRUITMENT</div>
+
+        <div class="lines">
+            <div class="rectangle"></div>
+            <div class="rectangle"></div>
+        </div>
+    </div>
+
+    <div class="subtitle">
+        <h2 class="timeline">RECRUITMENT TIMELINE</h2>
+        <a href="https://fb.me/e/65nJcPi8h" class="button">Event Page</a>
+    </div>
+
+    <div class="recruit-content">
+        <img style="max-height: 100%; max-width: 100%; margin: 10px 5px 20px 5px;"
+            src="../static/images/recruitmenttimeline.JPG" />
+        <p class="page-text">Interested in joining?<br>Our application is currently open for Winter 2021.</p>
+        <a href="https://forms.gle/REBuPk4hchuetdqR6" class="button">Apply Now</a>
+        <p class="page-text">Applications are due <span
+                style="color: #FFE27B; font-weight: bold; font-size: 20px;">January 15th at 3 pm PST</span></p>
+    </div>
+
+    <h2 class="faq">FREQUENTLY ASKED QUESTIONS</h2>
+    <div class="accordion-wrap">
+        <button class="accordion">What is Consulting?</button>
+        <div class="panel">
+            <p>Consulting is a service that provides expert advice in a particular area to a party. Consultants
+                will normally conduct research, run analyses, and formulate data-driven solutions addressing the
+                issue. An example would be hiring a consultant to gain advice on whether it would be profitable
+                to move a business to a new location.</p>
+        </div>
+    </div>
+
+    <div class="accordion-wrap">
+        <button class="accordion">Why choose Cornerstone Community Consultants?</button>
+        <div class="panel">
+            <p>CCC fosters a supportive environment where members have the opportunity to take on leadership
+                positions, sharpen their hard and soft skills, and be able to grow professionally. Students
+                can expect a professional and selfless community of like-minded people, career focused events,
+                and practical experiences.</p>
+        </div>
+    </div>
+
+    <div class="accordion-wrap">
+        <button class="accordion">Are there any requirements for joining?</button>
+        <div class="panel">
+            <p>There are no academic requirements to join CCC. All that we ask is that you have an interest in
+                consulting, come with an open-mind, and be willing to work with others to grow!</p>
+        </div>
+    </div>
+
+    <div class="accordion-wrap">
+        <button class="accordion">What if I have no experience in consulting?</button>
+        <div class="panel">
+            <p>That’s completely okay! CCC does not require you to have any previous experience in consulting in
+                order to join. Once you have been admitted into CCC, you will be led through a training process and be
+                expected to complete a mock project before taking on a real client project.</p>
+        </div>
+    </div>
+
+    <div class="accordion-wrap">
+        <button class="accordion">What if I don’t want to pursue a career in consulting?</button>
+        <div class="panel">
+            <p>All the members in CCC come from various studies and don’t neccessarily have the end goal of
+                pursuing consulting. However, the skills and training that you gain from our program will be fundamental
+                to any industry you choose.</p>
+        </div>
+    </div>
+
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+    </script>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">
+            <img class="logo-footer" src="../static/images/blacklogo.png" />
+            <h8>Cornerstone Community Consultants</h8>
+        </div>
+        <div class="footer-links">
+            <a href="https://www.linkedin.com/company/cornerstone-community-consultants/about/">
+                <img class="linkedin-footer" src="../static/images/linkedinfooter.svg">
+            </a>
+            <a href="https://www.instagram.com/ucsdcornerstone/">
+                <img class="instagram-footer" src="../static/images/instagramfooter.svg">
+            </a>
+            <a href="https://www.facebook.com/cornerstonecommunityconsultants/">
+                <img class="facebook-footer" src="../static/images/facebookfooter.svg">
+            </a>
+            <a href="mailto:ucsd.cornerstone@gmail.com">
+                <img class="mail-footer2" src="../static/images/mail-footer2.svg">
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        let navBurger = document.querySelector('.menu-toggle');
+        let navigation = document.querySelector('.nav');
+        let submenu = document.querySelectorAll('.submenu');
+        let submenuElement = document.querySelectorAll('.nav ul');
+        navBurger.addEventListener('click', function () {
+            navigation.classList.toggle('showing');
+        });
+        submenu[0].addEventListener('click', function () {
+            submenuElement[0].classList.toggle('showing');
+        })
+        submenu[1].addEventListener('click', function () {
+            submenuElement[1].classList.toggle('showing');
+        })
+    </script>
+
+</body>
+
+
+</html>

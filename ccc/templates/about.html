@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>About Us</title>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <script src="https://kit.fontawesome.com/731b3fa837.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        body {
+            background: #1D1D1D;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        /*Navbar*/
+
+        header {
+            background: #1D1D1D;
+            height: 110px;
+            width: 100%;
+            position: fixed;
+        }
+
+        header * {
+            color: white;
+            font-family: 'Lato', sans-serif;
+        }
+
+        header .logo {
+            float: left;
+            display: flex;
+            color: white;
+            padding: 20px 0px 20px 5vw;
+        }
+
+        .logo>img {
+            margin-right: 5px;
+        }
+
+        .logo-title {
+            font-family: 'Lato', sans-serif;
+            font-size: 18px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        header ul {
+            float: right;
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+            margin-right: 5vw;
+            margin-top: 25px;
+        }
+
+        header ul li {
+            float: left;
+            position: relative;
+        }
+
+        header ul li ul {
+            position: absolute;
+            top: 38px;
+            width: 150px;
+            display: none;
+        }
+
+        header ul li:hover ul {
+            display: block;
+        }
+
+        header ul li ul li {
+            width: 100%;
+        }
+
+        header ul li ul li a {
+            background: #1D1D1D;
+            padding: 10px;
+        }
+
+        header ul li a {
+            display: block;
+            padding: 21px;
+            font-size: 1.1em;
+            text-decoration: none;
+        }
+
+        header ul li a:hover {
+            background: #444444;
+            transition: 0.5s;
+        }
+
+        header .menu-toggle {
+            display: none;
+        }
+
+        @media screen and (max-width: 790px) {
+            header {
+                position: fixed;
+            }
+
+            header ul {
+                width: 100%;
+                background: #1D1D1D;
+                margin-top: 0px;
+                margin-right: 0px;
+                max-height: 0px;
+                overflow: hidden;
+            }
+
+            .showing {
+                max-height: 100em;
+            }
+
+            header ul li {
+                width: 100%;
+            }
+
+            header ul li ul {
+                position: static;
+                display: block;
+                width: 100%;
+            }
+
+            header ul li ul li a {
+                padding: 10px 10px 10px 50px;
+
+            }
+
+            header .menu-toggle {
+                display: block;
+                position: absolute;
+                right: 40px;
+                top: 40px;
+                font-size: 1.9em;
+                color: white;
+            }
+
+            header .logo {
+                margin-left: 0.1em;
+            }
+        }
+
+
+        /*Title Header*/
+
+        .title-container {
+            width: 100%;
+            height: 250px;
+            background: url("../static/images/radys.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            padding-top: 110px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .title {
+            font-family: 'Lato', sans-serif;
+            font-weight: bold;
+            font-size: 50px;
+            letter-spacing: 0.13em;
+            color: white;
+            text-align: center;
+            white-space: nowrap;
+            margin: 0px 10px 0px 70px;
+        }
+
+        .lines {
+            width: 100%;
+            margin-right: 50px;
+        }
+
+        .rectangle {
+            height: 4px;
+            width: 100%;
+            min-width: none;
+            background: white;
+        }
+
+        .rectangle:nth-child(2) {
+            background: #FFE27C;
+            margin-top: 10px;
+        }
+
+        /*Content*/
+
+        .mission {
+            font-size: 2.8em;
+            font-weight: normal;
+            color: white;
+            font-family: 'Lato', sans-serif;
+            margin: 10vh 0px 3vh 10vw;
+            letter-spacing: 0.13em;
+        }
+
+        .mission-content {
+            display: flex;
+            color: white;
+            align-items: center;
+            margin: 10px 10vw;
+        }
+
+        .handshake {
+            margin-right: 40px;
+        }
+
+        .handshake>img {
+            height: 400px;
+            width: 500px;
+        }
+
+        .handshake-text {
+            font-size: 18px;
+            font-family: 'Lato', sans-serif;
+            letter-spacing: 0.13em;
+        }
+
+        .apart {
+            margin: 0px 10vw;
+            letter-spacing: 0.13em;
+            font-family: 'Lato', sans-serif;
+            font-weight: lighter;
+            color: white;
+        }
+
+        .apart.titles {
+            font-size: 2em;
+            margin-top: 100px;
+        }
+
+        .apart.content {
+            margin-top: 20px;
+            font-size: 18px;
+            margin-bottom: 60px;
+        }
+
+        @media screen and (max-width: 980px) {
+            .mission {
+                margin-left: 0px;
+                margin-right: 0px;
+                text-align: center;
+            }
+
+            .mission-content {
+                flex-wrap: wrap;
+            }
+
+            .handshake {
+                margin: auto;
+                margin-bottom: 20px;
+            }
+
+            .handshake>img {
+                height: 350px;
+                width: 400px;
+            }
+
+            .handshake-text {
+                text-align: center;
+            }
+
+            .apart.titles {
+                text-align: center;
+            }
+
+            .apart.content {
+                text-align: center;
+            }
+        }
+
+        /*Footer*/
+
+        footer {
+            margin-top: 200px;
+            background: #FFFDF4;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .footer-links a img {
+            height: 40px;
+            width: 40px;
+        }
+
+        .footer-links {
+            margin-left: auto;
+            margin-right: 3em;
+            display: flex;
+            flex-wrap: nowrap;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            margin-left: 1em;
+        }
+
+        .footer-logo img {
+            height: 60px;
+            width: 60px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            margin-left: 1.5em;
+        }
+
+        .footer-logo h8 {
+            margin-left: 1em;
+            font-family: 'Lato', sans-serif;
+            font-size: 1.1em;
+            letter-spacing: 0.135em;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Page Navigation Bar -->
+    <header>
+        <a href="../ccc/">
+            <div class="logo">
+                <img class="logo-header" src="../static/images/logo.png" height="70px" width="80px" />
+                <div class="logo-title">
+                    <div><span style="color: #FFE27C;">C</span>ornerstone</div>
+                    <div><span style="color: #FFE27C;">C</span>ommunity</div>
+                    <div><span style="color: #FFE27C;">C</span>onsultants</div>
+                </div>
+            </div>
+        </a>
+        <i class="fas fa-bars menu-toggle"></i>
+        <ul class="nav">
+            <li><a href="about.html">About Us</a></li>
+            <li>
+                <a class="submenu">
+                    Work With Us
+                    <i class="fas fa-sort-down" style="font-size: 1.1em; margin-left: 0.1em;"></i>
+                </a>
+                <ul>
+                    <li><a href="services.html">Our Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                </ul>
+            </li>
+            <li>
+                <a class="submenu">
+                    Join Us
+                    <i class="fas fa-sort-down" style="font-size: 1.1em; margin-left: 0.1em;"></i>
+                </a>
+                <ul>
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="recruitment.html">Recruitment</a></li>
+                </ul>
+            </li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </header>
+
+    <!-- Header Picture -->
+    <div class="title-container">
+        <div class="title">ABOUT US</div>
+
+        <div class="lines">
+            <div class="rectangle"></div>
+            <div class="rectangle"></div>
+        </div>
+    </div>
+
+    <!-- Our Mission -->
+    <h2 class="mission">OUR MISSION</h2>
+
+    <!-- Description -->
+    <div class="mission-content">
+        <div class="handshake">
+            <img src="../static/images/handshake.jpg" />
+        </div>
+        <div class="handshake-text">
+            We have a vision which is to foster professionalism, excellence, and integrity among students by
+            delivering economic value to the community through pro-bono consulting services.
+            <br><br>
+            Founded in 2014, Cornerstone Community Consultants is a student group that delivers top quality
+            research, analysis, and coordination to local businesses. Our student consultants are among the
+            brightest talents who are committed to contributing back to the community through our mutual passion,
+            business. Clients can expect only the best service from our consulting teams to address their various
+            needs. Please see our services page to learn more about what we offer, as well as our portfolio to see
+            descriptions of previous projects.
+        </div>
+    </div>
+    <h2 class="apart titles">WHAT SETS US APART</h2>
+
+    <p class="apart content">
+        All clients receive free consulting from a team of dedicated students, as we never charge for our services. This
+        way, we foster a selfless environment, and can directly give back to our community. CCC strives to serve as the
+        bridge between community service, professional development, and future business leadership.
+    </p>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">
+            <img class="logo-footer" src="../static/images/blacklogo.png" />
+            <h8>Cornerstone Community Consultants</h8>
+        </div>
+        <div class="footer-links">
+            <a href="https://www.linkedin.com/company/cornerstone-community-consultants/about/">
+                <img class="linkedin-footer" src="../static/images/linkedinfooter.svg">
+            </a>
+            <a href="https://www.instagram.com/ucsdcornerstone/">
+                <img class="instagram-footer" src="../static/images/instagramfooter.svg">
+            </a>
+            <a href="https://www.facebook.com/cornerstonecommunityconsultants/">
+                <img class="facebook-footer" src="../static/images/facebookfooter.svg">
+            </a>
+            <a href="mailto:ucsd.cornerstone@gmail.com">
+                <img class="mail-footer2" src="../static/images/mail-footer2.svg">
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        let navBurger = document.querySelector('.menu-toggle');
+        let navigation = document.querySelector('.nav');
+        let submenu = document.querySelectorAll('.submenu');
+        let submenuElement = document.querySelectorAll('.nav ul');
+        navBurger.addEventListener('click', function () {
+            navigation.classList.toggle('showing');
+        });
+        submenu[0].addEventListener('click', function () {
+            submenuElement[0].classList.toggle('showing');
+        })
+        submenu[1].addEventListener('click', function () {
+            submenuElement[1].classList.toggle('showing');
+        })
+    </script>
+
+</body>
+
+
+</html>

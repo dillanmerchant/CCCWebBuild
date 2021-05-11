@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Our Team</title>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <script src="https://kit.fontawesome.com/731b3fa837.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        body {
+            background: #1D1D1D;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .column1 {
+            float: left;
+            width: 33.33%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .column2 {
+            float: left;
+            width: 50%;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        .column3 {
+            float: left;
+            width: 25%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+            box-sizing: border-box;
+        }
+
+        /*Navbar*/
+
+        header {
+            background: #1D1D1D;
+            height: 110px;
+            width: 100%;
+            position: fixed;
+            z-index: 50;
+        }
+
+        header * {
+            color: white;
+            font-family: 'Lato', sans-serif;
+        }
+
+        header .logo {
+            float: left;
+            display: flex;
+            color: white;
+            padding: 20px 0px 20px 5vw;
+        }
+
+        .logo>img {
+            margin-right: 5px;
+        }
+
+        .logo-title {
+            font-family: 'Lato', sans-serif;
+            font-size: 18px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        header ul {
+            float: right;
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+            margin-right: 5vw;
+            margin-top: 25px;
+        }
+
+        header ul li {
+            float: left;
+            position: relative;
+        }
+
+        header ul li ul {
+            position: absolute;
+            top: 38px;
+            width: 150px;
+            display: none;
+        }
+
+        header ul li:hover ul {
+            display: block;
+        }
+
+        header ul li ul li {
+            width: 100%;
+        }
+
+        header ul li ul li a {
+            background: #1D1D1D;
+            padding: 10px;
+        }
+
+        header ul li a {
+            display: block;
+            padding: 21px;
+            font-size: 1.1em;
+            text-decoration: none;
+        }
+
+        header ul li a:hover {
+            background: #444444;
+            transition: 0.5s;
+        }
+
+        header .menu-toggle {
+            display: none;
+        }
+
+        @media screen and (max-width: 790px) {
+            header {
+                position: fixed;
+            }
+
+            header ul {
+                width: 100%;
+                background: #1D1D1D;
+                margin-top: 0px;
+                margin-right: 0px;
+                max-height: 0px;
+                overflow: hidden;
+            }
+
+            .showing {
+                max-height: 100em;
+            }
+
+            header ul li {
+                width: 100%;
+            }
+
+            header ul li ul {
+                position: static;
+                display: block;
+                width: 100%;
+            }
+
+            header ul li ul li a {
+                padding: 10px 10px 10px 50px;
+
+            }
+
+            header .menu-toggle {
+                display: block;
+                position: absolute;
+                right: 40px;
+                top: 40px;
+                font-size: 1.9em;
+                color: white;
+            }
+
+            header .logo {
+                margin-left: 0.1em;
+            }
+        }
+
+
+        /*Title Header*/
+
+        .title-container {
+            width: 100%;
+            height: 250px;
+            background: url("../static/images/radys.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            padding-top: 110px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .title {
+            font-family: 'Lato', sans-serif;
+            font-weight: bold;
+            font-size: 50px;
+            letter-spacing: 0.13em;
+            color: white;
+            text-align: center;
+            white-space: nowrap;
+            margin: 0px 10px 0px 70px;
+        }
+
+        .lines {
+            width: 100%;
+            margin-right: 50px;
+        }
+
+        .rectangle {
+            height: 4px;
+            width: 100%;
+            min-width: none;
+            background: white;
+        }
+
+        .rectangle:nth-child(2) {
+            background: #FFE27C;
+            margin-top: 10px;
+        }
+
+        /*Content*/
+
+        .mission {
+            font-size: 2.8em;
+            font-weight: normal;
+            color: white;
+            font-family: 'Lato', sans-serif;
+            margin: 10vh 0px 3vh 10vw;
+            letter-spacing: 0.13em;
+        }
+
+        .mission-content {
+            display: flex;
+            color: white;
+            align-items: center;
+            margin: 10px 10vw;
+        }
+
+        .handshake {
+            margin-right: 40px;
+        }
+
+        .handshake>img {
+            height: 400px;
+            width: 500px;
+        }
+
+        .handshake-text {
+            font-size: 18px;
+            font-family: 'Lato', sans-serif;
+            letter-spacing: 0.13em;
+        }
+
+        .apart {
+            margin: 0px 10vw;
+            letter-spacing: 0.13em;
+            font-family: 'Lato', sans-serif;
+            font-weight: lighter;
+            color: white;
+        }
+
+        .apart.titles {
+            font-size: 2em;
+            margin-top: 100px;
+        }
+
+        .apart.content {
+            margin-top: 20px;
+            font-size: 18px;
+            margin-bottom: 60px;
+        }
+
+        @media screen and (max-width: 980px) {
+            .mission {
+                margin-left: 0px;
+                margin-right: 0px;
+                text-align: center;
+            }
+
+            .mission-content {
+                flex-wrap: wrap;
+            }
+
+            .handshake {
+                margin: auto;
+                margin-bottom: 20px;
+            }
+
+            .handshake>img {
+                height: 350px;
+                width: 400px;
+            }
+
+            .handshake-text {
+                text-align: center;
+            }
+
+            .apart.titles {
+                text-align: center;
+            }
+
+            .apart.content {
+                text-align: center;
+            }
+        }
+
+        /*Footer*/
+
+        footer {
+            margin-top: 200px;
+            background: #FFFDF4;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .footer-links a img {
+            height: 40px;
+            width: 40px;
+        }
+
+        .footer-links {
+            margin-left: auto;
+            margin-right: 3em;
+            display: flex;
+            flex-wrap: nowrap;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            margin-left: 1em;
+        }
+
+        .footer-logo img {
+            height: 60px;
+            width: 60px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            margin-left: 1.5em;
+        }
+
+        .footer-logo h8 {
+            margin-left: 1em;
+            font-family: 'Lato', sans-serif;
+            font-size: 1.1em;
+            letter-spacing: 0.135em;
+        }
+
+        .page-text {
+            position: absolute;
+            font-family: 'Lato', sans-serif;
+            letter-spacing: 0.13em;
+            z-index: 20;
+            color: white;
+        }
+
+        .button {
+            background-color: #1D1D1D;
+            border: 2px solid #FFE27B;
+            color: #FFE27B;
+            text-align: center;
+            text-decoration: none;
+            padding: 10px 24px;
+            display: inline-block;
+            font-family: 'Lato', sans-serif;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            transition-duration: 0.4s;
+        }
+
+
+        .button:hover {
+            background-color: #FFE27B;
+            color: black;
+        }
+
+        .button:active {
+            background-color: #FFE27B;
+            transform: translateY(4px);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Page Navigation Bar -->
+    <header>
+        <a href="../ccc/">
+            <div class="logo">
+                <img class="logo-header" src="../static/images/logo.png" height="70px" width="80px" />
+                <div class="logo-title">
+                    <div><span style="color: #FFE27C;">C</span>ornerstone</div>
+                    <div><span style="color: #FFE27C;">C</span>ommunity</div>
+                    <div><span style="color: #FFE27C;">C</span>onsultants</div>
+                </div>
+            </div>
+        </a>
+        <i class="fas fa-bars menu-toggle"></i>
+        <ul class="nav">
+            <li><a href="about.html">About Us</a></li>
+            <li>
+                <a class="submenu">
+                    Work With Us
+                    <i class="fas fa-sort-down" style="font-size: 1.1em; margin-left: 0.1em;"></i>
+                </a>
+                <ul>
+                    <li><a href="services.html">Our Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                </ul>
+            </li>
+            <li>
+                <a class="submenu">
+                    Join Us
+                    <i class="fas fa-sort-down" style="font-size: 1.1em; margin-left: 0.1em;"></i>
+                </a>
+                <ul>
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="recruitment.html">Recruitment</a></li>
+                </ul>
+            </li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </header>
+
+    <!-- Header Picture -->
+    <div class="title-container">
+        <div class="title">OUR TEAM</div>
+
+        <div class="lines">
+            <div class="rectangle"></div>
+            <div class="rectangle"></div>
+        </div>
+    </div>
+
+    <!-- First row of Executive Board -->
+    <div class="row" style="position: relative; top: 100px; width: 70%; margin-left:auto; margin-right:auto;">
+        <div class="column2">
+            <p class="page-text"
+                style="float: left; font-size: 20px; line-height: 140%; font-weight: 600; width: 50%; text-align: center; margin-bottom: 0.5em;">
+                <img src="../static/images/ariana2.JPG"
+                    style="width: 45%; display: block; margin-left: auto; margin-right: auto; margin-bottom: 10px;" /><span
+                    style="color: #FFE27B">President</span><br><span
+                    style="font-weight: normal; font-size: 14px;">Ariana Ghahary</span>
+            </p>
+        </div>
+        <div class="column2">
+            <p class="page-text"
+                style="float: left; font-size: 17px; line-height: 140%; font-weight: 600; text-align: center; width: 50%; margin-bottom: 0.5em;">
+                <img src="../static/images/candice.jpeg"
+                    style="width: 45%; display: block; margin-left: auto; margin-right: auto;" /><span
+                    style="color: #FFE27B">Vice President of Partner </br> Relations</span><br><span
+                    style="font-weight: normal; font-size: 14px;">Candice Lee</span>
+            </p>
+        </div>
+    </div>
+
+    <!-- Second Row of Executive Board -->
+    <div class="row" style="position: relative; top: 450px; width: 70%; margin-left: auto; margin-right: auto;">
+        <div class="column2">
+            <p class="page-text"
+                style="float: left; font-size: 17px; line-height: 140%; font-weight: 600; text-align: center; width: 50%; margin-right: 1%; margin-bottom: 0.5em;">
+                <img src="../static/images/padmaja.jpeg"
+                    style="display: block; width: 45%; margin-bottom: 15px; margin-left: auto; margin-right:auto;" /><span
+                    style="color: #FFE27B">Marketing Director</span><br><span
+                    style="font-weight: normal; font-size: 14px;">Padmaja Gujje</span>
+            </p>
+        </div>
+
+        <div class="column2">
+            <p class="page-text"
+                style="float: left; font-size: 17px; line-height: 140%; font-weight: 600; text-align: center; width: 50%; margin-right: 1%; margin-bottom: 0.5em;">
+                <img src="../static/images/professional.jpg"
+                    style="width: 45%; margin-left: auto; margin-right:auto; display: block;" /><span
+                    style="color: #FFE27B">Vice President of </br> Recruitment</span><br><span
+                    style="font-weight: normal; font-size: 14px;">Angela Chen</span>
+            </p>
+        </div>
+    </div>
+
+    </div>
+
+    <!-- Project Managers -->
+    <div class="w3-container" style="position: relative; top: 1050px;">
+
+        <h3 class="page-text"
+            style="width: 100%; font-style: normal; font-weight: 400; font-size: 35px; line-height: 48px; text-align: center;">
+            <span style="color: #FFE27B; font-weight: 600;">Project Managers</span> 2020-2021
+        </h3>
+
+        <div class="row" style="position: relative; top: 103px; width: 65%; margin-left: auto; margin-right: auto;">
+            <div class="column1">
+                <p class="page-text"
+                    style="float: left; font-size: 17px; line-height: 140%; font-weight: 600; text-align: center; width: 33.33%; margin-bottom: 0.5em;">
+                    <img src="../static/images/peggyfirst.JPG"
+                        style="width: 70%; margin-bottom: 5px; margin-left:auto; margin-right:auto; display: block" /><span
+                        style="color: #FFE27B">Project Manager</span><br><span
+                        style="font-weight: normal; font-size: 14px;">Peggy Yan</span>
+                </p>
+            </div>
+            <div class="column1">
+                <p class="page-text"
+                    style="float: left; font-size: 17px; line-height: 140%; font-weight: 600; text-align: center; width: 33.33%; margin-bottom: 0.5em;">
+                    <img src="../static/images/mitalifirst.JPG"
+                        style="width: 70%; margin-bottom: 5px; margin-left:auto; margin-right: auto; display: block;" /><span
+                        style="color: #FFE27B">Project Manager</span><br><span
+                        style="font-weight: normal; font-size: 14px;">Mitali Shah</span>
+                </p>
+            </div>
+            <div class="column1">
+                <p class="page-text"
+                    style="float: left; font-size: 17px; line-height: 140%; font-weight: 600; text-align: center; width: 33.33%; margin-bottom: 0.5em;">
+                    <img src="../static/images/Sahithifirst.JPG"
+                        style="width: 70%; margin-bottom: 5px; margin-left:auto; margin-right: auto; display: block;" /><span
+                        style="color: #FFE27B">Project Manager</span><br><span
+                        style="font-weight: normal; font-size: 14px;">Sahithi Chimmula</span>
+                </p>
+            </div>
+        </div>
+
+        <div class="row" style="position: relative; top: 453px; width: 65%; margin-left:auto; margin-right: auto;">
+            <div class="column1">
+                <p class="page-text"
+                    style="float: left; font-size: 17px; line-height: 140%; font-weight: 600; text-align: center; width: 33.33%; margin-bottom: 0.5em;">
+                    <img src="../static/images/peggyfirst.JPG"
+                        style="width: 70%; margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto;" /><span
+                        style="color: #FFE27B">Project Manager</span><br><span
+                        style="font-weight: normal; font-size: 14px;">Hannah Truong</span>
+                </p>
+            </div>
+            <div class="column1">
+                <p class="page-text"
+                    style="float: left; font-size: 17px; line-height: 140%; font-weight: 600; text-align: center; width: 33.33%; margin-bottom: 0.5em;">
+                    <img src="../static/images/mitalifirst.JPG"
+                        style="width: 70%; margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto;" /><span
+                        style="color: #FFE27B">Project Manager</span><br><span
+                        style="font-weight: normal; font-size: 14px;">Aman Jindal</span>
+                </p>
+            </div>
+            <div class="column1">
+                <p class="page-text"
+                    style="float: left; font-size: 17px; line-height: 140%; font-weight: 600; text-align: center; width: 33.33%; margin-bottom: 0.5em;">
+                    <img src="../static/images/Sahithifirst.JPG"
+                        style="width: 70%; margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto;" /><span
+                        style="color: #FFE27B">Project Manager</span><br><span
+                        style="font-weight: normal; font-size: 14px;">William Landry</span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Consultants -->
+    <div class="w3-container" style="position: relative; top: 1900px;">
+
+        <h3 class="page-text"
+            style="font-style: normal; font-weight: 400; font-size: 35px; line-height: 48px; text-align: center; width: 100%">
+            <span style="color: #FFE27B; font-weight: 600;">Consultants</span> 2020-2021
+        </h3>
+
+        <!-- <h3 class="page-text" style="left: 34.5%; font-style: normal; font-weight: 400; font-size: 35px; line-height: 48px; text-align: left;">
+    <span style="color: #FFE27B; font-weight: 600;">Consultants</span> 2020-2021</h3> -->
+
+        <div class="row" style="position: relative; top: 60px; width: 70%; margin-left: auto; margin-right: auto;">
+            <div class="column2">
+                <p class="page-text"
+                    style="font-size: 18px; line-height: 200%; font-weight: normal; text-align: center; height: 100%; width: 50%;">
+                    Angela Cai<br />
+                    Marco Carteno<br />
+                    Rickie Chen<br />
+                    Aditya Goyal<br />
+                    Dev Gulati<br />
+                    Elaine Ha<br />
+                    Moosaa Jalaldin<br />
+                    Samuel Jin<br />
+                    Varun Kabbin<br />
+                    Christian Kim<br />
+                    Brian Kim<br />
+                    Andrea Lai<br />
+                    Valerie Le<br />
+                </p>
+            </div>
+            <div class="column2">
+                <p class="page-text"
+                    style="font-size: 18px; line-height: 200%; font-weight: normal; text-align: center; height: 190px; width: 50%;">
+                    Sharon Lei<br />
+                    Arial Li<br />
+                    Angela Maeng<br />
+                    Darby McWaters<br />
+                    Noah Mendelsohn<br />
+                    Dillan Merchant<br />
+                    Dang Pham<br />
+                    Naomi Rivera<br />
+                    Winnie She<br />
+                    Anukul Vuppala<br />
+                    Tianyu Wang<br />
+                    Lillian Wei<br />
+                    Aung Yang<br />
+                    Lehan You<br />
+                </p>
+            </div>
+        </div>
+
+        <!-- <div class="w3-container" style="position: relative; top: 400px; display: flex; justify-content: center; align-items: center; align-content: center;"> -->
+        <div class="w3-container"
+            style="position: relative; top: 750px; display: flex; justify-content: center; align-items: center; align-content: center;">
+            <a href="recruitment.html" class="button" style="text-align: center; width: 120px;">Join Our Team</a>
+        </div>
+    </div>
+
+</body>
+
+
+</html>
