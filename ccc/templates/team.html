@@ -365,6 +365,58 @@
             font-size: 1.1em;
             letter-spacing: 0.135em;
         }
+        
+        .container {
+            position: relative;
+            width: 50%;
+        }
+        .image {
+            opacity: 1;
+            display: block;
+            width: 100%;
+            height: auto;
+            transition: .5s ease;
+            backface-visibility: hidden;
+        }
+        .middle {
+            transition: .5s ease;
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        .container:hover .image {
+            width: 50%;
+            opacity: 0.4;
+        }
+        .container:hover .middle {
+            opacity: 1;
+        }
+
+        .container2 {
+            position: relative;
+            width: 100%;
+        }
+        .middle {
+            transition: .5s ease;
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        .container2:hover .image {
+            width: 50%;
+            opacity: 0.4;
+        }
+        .container2:hover .middle {
+            opacity: 1;
+        }
     </style>
 </head>
 
@@ -487,6 +539,7 @@
         </div>
     </div>
 
+
     <!--Consultants-->
     <h3><span style="color: #FFE27B; font-weight: 600;">Consultants</span> 2020-2021</h3>
 
@@ -523,7 +576,6 @@
                     Anukul Vuppala<br />
                     Tianyu Wang<br />
                     Lillian Wei<br />
-                    Aung Yang<br />
                     Lehan You<br />
                 </p>
             </div>
