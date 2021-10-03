@@ -374,6 +374,50 @@
             font-size: 25px;
         }
 
+        /*Footer*/
+
+        footer {
+            margin-top: 200px;
+            background: #FFFDF4;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .footer-links a img {
+            height: 40px;
+            width: 40px;
+        }
+
+        .footer-links {
+            margin-left: auto;
+            margin-right: 3em;
+            display: flex;
+            flex-wrap: nowrap;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            margin-left: 1em;
+        }
+
+        .footer-logo img {
+            height: 60px;
+            width: 60px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            margin-left: 1.5em;
+        }
+
+        .footer-logo h8 {
+            margin-left: 1em;
+            font-family: 'Lato', sans-serif;
+            font-size: 1.1em;
+            letter-spacing: 0.135em;
+        }
     </style>
 
 </head>
@@ -381,14 +425,16 @@
 <body>
 <div id="transparentBackground">
     <header>
-        <div class="logo">
-            <img class="logo-header" src="../static/images/logo.png" height="70px" width="80px" />
-            <div class="logo-title">
-                <div><span style="color: #FFE27C;">C</span>ornerstone</div>
-                <div><span style="color: #FFE27C;">C</span>ommunity</div>
-                <div><span style="color: #FFE27C;">C</span>onsultants</div>
+        <a href="./home.html">
+            <div class="logo">
+                <img class="logo-header" src="../static/images/logo.png" height="70px" width="80px" />
+                <div class="logo-title">
+                    <div><span style="color: #FFE27C;">C</span>ornerstone</div>
+                    <div><span style="color: #FFE27C;">C</span>ommunity</div>
+                    <div><span style="color: #FFE27C;">C</span>onsultants</div>
+                </div>
             </div>
-        </div>
+        </a>
         <i class="fas fa-bars menu-toggle"></i>
         <ul class="nav">
             <li><a href="about.html">About Us</a></li>
@@ -617,6 +663,28 @@
             transparentBackground.style.opacity = 1; 
         }
     </script>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">
+            <img class="logo-footer" src="../static/images/blacklogo.png" />
+            <h8>Cornerstone Community Consultants</h8>
+        </div>
+        <div class="footer-links">
+            <a href="https://www.linkedin.com/company/cornerstone-community-consultants/about/">
+                <img class="linkedin-footer" src="../static/images/linkedinfooter.svg">
+            </a>
+            <a href="https://www.instagram.com/ucsdcornerstone/">
+                <img class="instagram-footer" src="../static/images/instagramfooter.svg">
+            </a>
+            <a href="https://www.facebook.com/cornerstonecommunityconsultants/">
+                <img class="facebook-footer" src="../static/images/facebookfooter.svg">
+            </a>
+            <a href="mailto:ucsd.cornerstone@gmail.com">
+                <img class="mail-footer2" src="../static/images/mail-footer2.svg">
+            </a>
+        </div>
+    </footer>
 
 </body>
 
