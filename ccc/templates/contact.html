@@ -1,467 +1,353 @@
-{% load static %} 
-
-
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <meta charset = "UTF-8" />
-        <title>Contact Us</title>
-        <link rel = "stylesheet" href = "{% static 'css/style.css' %}">
-        <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
 
-        <style>
-            .header-rady-img {
-                position: relative;
+<head>
+    <meta charset="UTF-8" />
+    <title>Contact Us</title>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <script src="https://kit.fontawesome.com/731b3fa837.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        body {
+            background: #1D1D1D;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        /*Navbar*/
+
+        header {
+            background: #1D1D1D;
+            height: 110px;
+            width: 100%;
+            position: fixed;
+        }
+
+        header * {
+            color: white;
+            font-family: 'Lato', sans-serif;
+        }
+
+        header .logo {
+            float: left;
+            display: flex;
+            color: white;
+            padding: 20px 0px 20px 5vw;
+        }
+
+        .logo>img {
+            margin-right: 5px;
+        }
+
+        .logo-title {
+            font-family: 'Lato', sans-serif;
+            font-size: 18px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        header ul {
+            float: right;
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+            margin-right: 5vw;
+            margin-top: 25px;
+        }
+
+        header ul li {
+            float: left;
+            position: relative;
+        }
+
+        header ul li ul {
+            position: absolute;
+            top: 38px;
+            width: 150px;
+            display: none;
+        }
+
+        header ul li:hover ul {
+            display: block;
+        }
+
+        header ul li ul li {
+            width: 100%;
+        }
+
+        header ul li ul li a {
+            background: #1D1D1D;
+            padding: 10px;
+        }
+
+        header ul li a {
+            display: block;
+            padding: 21px;
+            font-size: 1.1em;
+            text-decoration: none;
+        }
+
+        header ul li a:hover {
+            background: #444444;
+            transition: 0.5s;
+        }
+
+        header .menu-toggle {
+            display: none;
+        }
+
+        .logo-title:hover {
+            background: #444;
+        }
+
+        @media screen and (max-width: 790px) {
+            header {
+                position: fixed;
+            }
+
+            header ul {
                 width: 100%;
-                height:250px; 
-                filter: brightness(40%);
-                object-fit: cover;
-                /* object-position: 20% 10%; */
-                /* background: url(https://ucsdnews.ucsd.edu/news_uploads/Rady-school-of-management-lead.jpg); */
-                /* background-size: 100% 100%; */
-            }
-
-            .rectangle{
-                /* width: 889px; */
-                height: 4px;
-                left: 490px;
-                background:rgb(255, 255, 255);
-                position:absolute;
-                width:61.7%; 
-            }
-
-            .logo-header {
-                cursor: pointer;
-                position: absolute;
-                width: 6.5%;
-                height: 65%;
-                left: 3%;
-                top: 17%;
-            }
-
-            .logo-footer {
-                cursor: pointer;
-                position: absolute;
-                width: 6.5%;
-                height: 100%;
-                left: 3.5%;
-                top: 3px;
-            }
-
-            .navbar {
-                overflow: hidden;
-                background-color: #1D1D1D;
-                font-family: 'Lato', sans-serif;
-                width: 500px;
-            }
-
-            .navbar a {
-                float: left;
-                font-size: 19px;
-                color: white;
-                text-align: center;
-                padding: 14px 16px;
-                text-decoration: none;
-            }
-
-            .dropdown1, .dropdown2{
-                float: left;
+                background: #1D1D1D;
+                margin-top: 0px;
+                margin-right: 0px;
+                max-height: 0px;
                 overflow: hidden;
             }
 
-            .dropdown1 .dropbtn1, .dropdown2 .dropbtn2{
-                font-size: 19px;
-                border: none;
-                outline: none;
-                color: white;
-                padding: 14px 16px;
-                background-color: inherit;
-                font-family: inherit; /* Important for vertical align on mobile phones */
-                margin: 0;
+            .showing {
+                max-height: 100em;
             }
-            
-            
-            .navbar a:hover, .dropbtn1:hover, .dropbtn2:hover{
-                color: #585858;
-                -webkit-transition: all 1s ease-out;
-                -moz-transition: all 1s ease-out;
-                -o-transition: all 1s ease-out;
-                -ms-transition: all 1s ease-out;
-                transition: all 1s ease-out;
-            }
-            
-            .dropdown-content1, .dropdown-content2 {
-                display: none;
-                position: absolute;
-                /* background-color: #f9f9f9; */
-                background-color: #1D1D1D;
-                min-width: 160px;
-                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-                z-index: 20;
-            }
-                 
 
-            .dropdown-content1 a,  .dropdown-content2 a{
-                float: none;
-                color: white;
-                border: 1px solid white;
-                padding: 12px 16px;
-                text-decoration: none;
+            header ul li {
+                width: 100%;
+            }
+
+            header ul li ul {
+                position: static;
                 display: block;
-                text-align: left;
+                width: 100%;
             }
 
-            
-            .dropdown-content1 a:hover, .dropdown-content2 a:hover {
-                background-color: #ddd;
+            header ul li ul li a {
+                padding: 10px 10px 10px 50px;
+
             }
 
-
-            .dropdown1:hover .dropdown-content1, .dropdown2:hover .dropdown-content2  {
+            header .menu-toggle {
                 display: block;
-            }
-
-
-            a{
-                text-decoration: none;
-            }
-
-            .CCCtitle{
-                width: 550px;
-                /* font-family: 'Lato', sans-serif; */
-                font-family: Lato;
+                position: absolute;
+                right: 40px;
+                top: 40px;
+                font-size: 1.9em;
                 color: white;
-                top: 90px;
-                font-style: normal;
-                font-weight: normal;
-                font-size: 24px;
-                line-height: 22px;
-                text-align: center;
-                letter-spacing: 0.155em;
-                text-decoration: none;
-                padding-right: 290px;
             }
 
-            .CCCtitle:hover{
-                color: #585858;
-                -webkit-transition: all 1s ease-out;
-                -moz-transition: all 1s ease-out;
-                -o-transition: all 1s ease-out;
-                -ms-transition: all 1s ease-out;
-                transition: all 1s ease-out;
-
+            header .logo {
+                margin-left: 0.1em;
             }
+        }
 
-        </style>
-        
-    </head>
-    <body style="background-color:#1D1D1D;">
-        <header style="position: fixed; z-index: 50; background-color: #1D1D1D;">
-            <img class = "logo-header" src="../static/images/logo.png"/>
-            <a href="http://127.0.0.1:8000/ccc/">
-            <h3 class="CCCtitle">Cornerstone Community Consultants</h3>
-            </a>
-            <div class="navbar" style="left: 20px;">
-                <a href="about.html">About Us</a>
-                <div class="dropdown1">
-                <button class="dropbtn1">Work With Us
-                    <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content1">
-                    <a href="services.html">Our Services</a>
-                    <a href="portfolio.html">Portfolio</a> 
-                    </div>
-                </div>   
-                <div class="dropdown2">
-                <button class="dropbtn2">Join Us
-                    <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content2">
-                    <a href="team.html">Our Team</a>
-                    <a href="recruitment.html">Recruitment</a> 
-                    </div>
+
+        /*Title Header*/
+
+        .title-container {
+            width: 100%;
+            height: 250px;
+            background: url("../static/images/radys.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            padding-top: 110px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .title {
+            font-family: 'Lato', sans-serif;
+            font-weight: bold;
+            font-size: 50px;
+            letter-spacing: 0.13em;
+            color: white;
+            text-align: center;
+            white-space: nowrap;
+            margin: 0px 10px 0px 70px;
+        }
+
+        .lines {
+            width: 100%;
+            margin-right: 50px;
+        }
+
+        .rectangle {
+            height: 4px;
+            width: 100%;
+            min-width: none;
+            background: white;
+        }
+
+        .rectangle:nth-child(2) {
+            background: #FFE27C;
+            margin-top: 10px;
+        }
+
+        /*Content*/
+
+        .content {
+            text-align: center;
+            color: white;
+            font-size: 35px;
+            line-height: 55px;
+            font-family: 'Lato', sans-serif;
+            letter-spacing: 0.13em;
+            margin-top: 100px;
+        }
+
+
+        /*Footer*/
+
+        footer {
+            margin-top: 200px;
+            background: #FFFDF4;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .footer-links a img {
+            height: 40px;
+            width: 40px;
+        }
+
+        .footer-links {
+            margin-left: auto;
+            margin-right: 3em;
+            display: flex;
+            flex-wrap: nowrap;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            margin-left: 1em;
+        }
+
+        .footer-logo img {
+            height: 60px;
+            width: 60px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            margin-left: 1.5em;
+        }
+
+        .footer-logo h8 {
+            margin-left: 1em;
+            font-family: 'Lato', sans-serif;
+            font-size: 1.1em;
+            letter-spacing: 0.135em;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Page Navigation Bar -->
+    <header>
+        <a href="./home.html">
+            <div class="logo">
+                <img class="logo-header" src="../static/images/logo.png" height="70px" width="80px" />
+                <div class="logo-title">
+                    <div><span style="color: #FFE27C;">C</span>ornerstone</div>
+                    <div><span style="color: #FFE27C;">C</span>ommunity</div>
+                    <div><span style="color: #FFE27C;">C</span>onsultants</div>
                 </div>
-                <a href="contact.html">Contact Us</a>
-            </div>  
-        </header>
-        {% block content %}
-        <style>
-            
-            .container{
-                padding-top: 15px ;
-            }
+            </div>
+        </a>
+        <i class="fas fa-bars menu-toggle"></i>
+        <ul class="nav">
+            <li><a href="about.html">About Us</a></li>
+            <li>
+                <a class="submenu">
+                    Work With Us
+                    <i class="fas fa-sort-down" style="font-size: 1.1em; margin-left: 0.1em;"></i>
+                </a>
+                <ul>
+                    <li><a href="services.html">Our Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                </ul>
+            </li>
+            <li>
+                <a class="submenu">
+                    Join Us
+                    <i class="fas fa-sort-down" style="font-size: 1.1em; margin-left: 0.1em;"></i>
+                </a>
+                <ul>
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="recruitment.html">Recruitment</a></li>
+                </ul>
+            </li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </header>
 
-            #id_first_name {
-                position: absolute;
-                width: 422px;
-                height: 45px;
-                left: 278px;
-                top: 651px;
-            }
+    <!-- Header Picture -->
+    <div class="title-container">
+        <div class="title">CONTACT US</div>
 
-            #id_last_name{
-                position: absolute;
-                width: 422px;
-                height: 45px;
-                left: 775px;
-                top: 651px;
-
-            } 
-
-            #id_email{
-                position: absolute;
-                width: 422px;
-                height: 45px;
-                left: 278px;
-                top: 758px;
-            }
-
-             
-            #id_phone{
-                position: absolute;
-                width: 422px;
-                height: 45px;
-                left: 775px;
-                top: 758px;
-            }
-
-            #id_company{
-                position: absolute;
-                width: 918px;
-                height: 46px;
-                left: 278px;
-                top: 867px;
-            }
-
-            #id_message{
-                position: absolute;
-                width: 918px;
-                height: 528px;
-                left: 278px;
-                top: 976px;
-            }
-     
-
-            .first_name, .last_name, .email, .company, .phone, .message{
-                font-family: Lato;
-                font-style: normal;
-                font-weight: 800;
-                font-size: 27px;
-                line-height: 32px;
-                text-align: center;
-                letter-spacing: 0.155em;
-                color: #FFE27B;
-            }
-
-            .btn-primary{
-                position: absolute;
-                width: 201px;
-                height: 64px;
-                left: 636px;
-                top: 1571px;
-                background: #FFE27B;
-                font-family: Lato;
-                font-style: normal;
-                font-weight: 800;
-                font-size: 30px;
-                line-height: 36px;
-                text-align: center;
-                letter-spacing: 0.155em;
-                color: #000000;
-            }
-
-           .first_name{
-            position: absolute;
-            width: 257px;
-            height: 27px;
-            left: 235px;
-            top: 615px;
-           }
-
-           .last_name{
-            position: absolute;
-            width: 257px;
-            height: 27px;
-            left: 730px;
-            top: 615px;
-           }
-
-           .email{
-            position: absolute;
-            width: 257px;
-            height: 26px;
-            left: 195px;
-            top: 720px;
-           }
-
-           .phone{
-            position: absolute;
-            width: 258px;
-            height: 26px;
-            left: 695px;
-            top: 720px; 
-           }
-
-           .company{
-            position: absolute;
-            width: 408px;
-            height: 27px;
-            left: 263px;
-            top: 830px;
-           }
-
-           .message{
-            position: absolute;
-            width: 258px;
-            height: 27px;
-            left: 218px;
-            top: 940px; 
-           }
-
-           .linkedin{
-            position: absolute;
-            width: 65px;
-            height: 56px;
-            left: 628px;
-            top: 1836px;
-           }
-
-           .facebook{
-            position: absolute;
-            width: 65px;
-            height: 56px;
-            left: 705px;
-            top: 1836px;
-            }
-
-            .instagram{
-                position: absolute;
-                width: 65px;
-                height: 56px;
-                left: 780px;
-                top: 1836px;
-            }
-
-                
-            footer{
-                position:absolute;
-                bottom: 0;
-                top: 2150px;
-                width:100%;
-                height:100px; 
-                /* bottom: 0; */
-            }
-
-            h8{
-                position: absolute;
-                width: 393px;
-                height: 29px;
-                left: 145px;
-                top: 43px;
-
-                font-family: Lato;
-                font-style: normal;
-                font-weight: normal;
-                font-size: 18px;
-                line-height: 22px;
-                text-align: center;
-                letter-spacing: 0.155em;
-                color: #1D1D1D;
-            }
-
-            .linkedin-footer{
-                position: absolute;
-                left: 69.93%;
-                right: 26.94%;
-                top: 29.38%;
-                bottom: 38.89%; 
-            }
-
-            .instagram-footer{
-                position: absolute;
-                left: 82.64%;
-                right: 14.24%;
-                top: 29.38%;
-                bottom: 38.89%;
-            }
-
-            .facebook-footer{
-                position: absolute;
-                left: 76.32%;
-                right: 20.56%;
-                top: 29.38%;
-                bottom: 38.89%;
-            }
-
-           .mail-footer2{
-            position: absolute;
-            left: 89.1%;
-            right: 7.78%;
-            top: 29.38%;
-            bottom: 38.89%;
-           }
-        </style>
-
-        <!-- Header Image -->
-        <div class="w3-container" style="position: relative; top: 150px;">
-            <img class = "header-rady-img" src="../static/images/radddddddddd.jpg"/>
-            <h1 class = "page-text" style = "top: 100px; left: 115px; font-weight: 900; font-size: 48px;">CONTACT US</h1>
-            <div class="rectangle" style = "bottom: 133px;"></div>
-            <div class="rectangle" style = "bottom: 116px; background: #FFE27C;"></div>
+        <div class="lines">
+            <div class="rectangle"></div>
+            <div class="rectangle"></div>
         </div>
-        <div class="container">
-            <form action = "" method = "POST">
-                {% csrf_token %} 
+    </div>
 
-                {% for hidden in form.hidden_fields %}
-                    {{ hidden }}
-                {% endfor %}
+    <div class="content">
+        <p>If you would like to contact us, please email:<br><span style="font-weight: bold;"><a style="text-decoration: none; color: #FFE27C;"
+                    href="mailto:ucsdcornerstone@gmail.com">ucsdcornerstone@gmail.com</a></span><br>Or click on any of
+            our socials down below!</p>
+    </div>
 
-                <label class ="first_name" >First Name </label>
-                <label class ="last_name" >Last Name </label>
-                <label class ="email" >Email </label>
-                <label class ="phone" >Phone </label>
-                <label class ="company" >Company (if applicable) </label>
-                <label class ="message" >Message </label>
-                {% for field in form.visible_fields %}
-                <div class= "form-group">
-                    {{field.errors}}
-                    <p>{{field}}</p>
-                </div>
-                {% endfor %}
-                <button type = "reset" class ="btn-primary ">Submit </button>
-                <a href="mailto:ucsd.cornerstone@gmail.com">
-                    <p class="page-text" style="font-style: normal; font-weight: bold; font-size: 30px; line-height: 36px; text-align: center; width: 563px; height: 45px; left: 455px; top: 1774px;">ucsdcornerstone@gmail.com</p>
-                </a>
-                <a href="https://www.linkedin.com/company/cornerstone-community-consultants/about/">
-                    <img class = "linkedin" src="../static/images/LinkedIn.svg" > 
-                </a>
-                <a href="https://www.facebook.com/cornerstonecommunityconsultants/">
-                    <img class = "facebook" src="../static/images/facebook.svg" > 
-                </a>
-                <a href="https://www.instagram.com/ucsdcornerstone/">
-                    <img class = "instagram" src="../static/images/instagram.svg" > 
-                </a>
-            </form>
-        </div>
-        {% endblock content %}
-        <footer style="background-color:white;">
-            <img class = "logo-footer" src="../static/images/blacklogo.png"/>
+
+    <footer>
+        <div class="footer-logo">
+            <img class="logo-footer" src="../static/images/blacklogo.png" />
             <h8>Cornerstone Community Consultants</h8>
+        </div>
+        <div class="footer-links">
             <a href="https://www.linkedin.com/company/cornerstone-community-consultants/about/">
-                <img class = "linkedin-footer" src="../static/images/linkedinfooter.svg"> 
+                <img class="linkedin-footer" src="../static/images/linkedinfooter.svg">
             </a>
             <a href="https://www.instagram.com/ucsdcornerstone/">
-                <img class = "instagram-footer" src="../static/images/instagramfooter.svg"> 
+                <img class="instagram-footer" src="../static/images/instagramfooter.svg">
             </a>
             <a href="https://www.facebook.com/cornerstonecommunityconsultants/">
-                <img class = "facebook-footer" src="../static/images/facebookfooter.svg"> 
+                <img class="facebook-footer" src="../static/images/facebookfooter.svg">
             </a>
             <a href="mailto:ucsd.cornerstone@gmail.com">
-                <img class = "mail-footer2" src="../static/images/mail-footer2.svg"> 
+                <img class="mail-footer2" src="../static/images/mail-footer2.svg">
             </a>
-        </footer>
-    </body>
+        </div>
+    </footer>
 
- </html>
+    <script>
+        let navBurger = document.querySelector('.menu-toggle');
+        let navigation = document.querySelector('.nav');
+        let submenu = document.querySelectorAll('.submenu');
+        let submenuElement = document.querySelectorAll('.nav ul');
+        navBurger.addEventListener('click', function () {
+            navigation.classList.toggle('showing');
+        });
+        submenu[0].addEventListener('click', function () {
+            submenuElement[0].classList.toggle('showing');
+        })
+        submenu[1].addEventListener('click', function () {
+            submenuElement[1].classList.toggle('showing');
+        })
+    </script>
+</body>
+
+</html>
